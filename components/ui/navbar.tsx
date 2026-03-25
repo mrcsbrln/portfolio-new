@@ -16,7 +16,7 @@ export function Navbar() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="fixed top-0 left-0 right-0 z-50"
         >
-            <div className="mx-auto max-w-6xl px-6 py-5">
+            <div className="mx-auto max-w-[1440px] px-6 py-5">
                 <nav className="flex items-center justify-between">
                     {/* Logo */}
                     <a

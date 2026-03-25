@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const navItems = [
     { label: "About me", href: "#about" },
@@ -10,20 +10,38 @@ const navItems = [
 ];
 
 export function Navbar() {
+    const visible = useMotionValue(1);
+    const y = useTransform(visible, [0, 1], ["-100%", "0%"]);
+    const lastScrollY = useRef(0);
     const [pastHero, setPastHero] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setPastHero(window.scrollY > window.innerHeight);
+            const currentY = window.scrollY;
+            const delta = currentY - lastScrollY.current;
+            const heroHeight = window.innerHeight;
+
+            setPastHero(currentY > heroHeight);
+
+            if (currentY < 60) {
+                animate(visible, 1, { duration: 0.3 });
+            } else if (delta > 4) {
+                animate(visible, 0, { duration: 0.3 });
+            } else if (delta < -4) {
+                animate(visible, 1, { duration: 0.3 });
+            }
+
+            lastScrollY.current = currentY;
         };
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [visible]);
 
     return (
         <motion.header
             initial={{ y: -16, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            animate={{ y: "0%", opacity: 1 }}
+            style={{ y }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="fixed top-0 left-0 right-0 z-50"
         >

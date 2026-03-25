@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const navItems = [
     { label: "About me", href: "#about" },
@@ -9,6 +10,16 @@ const navItems = [
 ];
 
 export function Navbar() {
+    const [pastHero, setPastHero] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setPastHero(window.scrollY > window.innerHeight);
+        };
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <motion.header
             initial={{ y: -16, opacity: 0 }}
@@ -16,7 +27,16 @@ export function Navbar() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="fixed top-0 left-0 right-0 z-50"
         >
-            <div className="mx-auto max-w-[1440px] px-6 py-5">
+            {/* Glass backdrop — only past hero */}
+            <div
+                className={`absolute inset-0 pointer-events-none transition-opacity duration-500
+                    backdrop-blur-md
+                    bg-white/80 dark:bg-neutral-950/80
+                    border-b border-neutral-200/60 dark:border-neutral-800/60
+                    ${pastHero ? "opacity-100" : "opacity-0"}`}
+            />
+
+            <div className="relative mx-auto max-w-[1440px] px-6 py-5">
                 <nav className="flex items-center justify-between">
                     {/* Logo */}
                     <a

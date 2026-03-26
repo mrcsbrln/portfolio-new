@@ -4,25 +4,30 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const skills = [
+  { name: "JavaScript", icon: "/icons/javascript.svg" },
   { name: "TypeScript", icon: "/icons/typescript.svg" },
-  { name: "Next.js",    icon: "/icons/nextjs.svg" },
-  { name: "Firebase",   icon: "/icons/firebase.svg" },
-  { name: "Angular",    icon: "/icons/angular.svg" },
-  { name: "Claude Code",icon: "/icons/claude-color.svg" },
-  { name: "n8n",        icon: "/icons/n8n.svg" },
-  { name: "Git",        icon: "/icons/git.svg" },
-  { name: "REST API",   icon: "/icons/rest-api.svg" },
+  { name: "Next.js", icon: "/icons/nextjs.svg" },
+  { name: "Angular", icon: "/icons/angular.svg" },
+  { name: "Firebase", icon: "/icons/firebase.svg" },
+  { name: "Git", icon: "/icons/git.svg" },
+  { name: "REST API", icon: "/icons/rest-api.svg" },
+  { name: "HTML", icon: "/icons/html.svg" },
+  { name: "CSS", icon: "/icons/css.svg" },
+  { name: "Claude Code", icon: "/icons/claude-color.svg" },
+  { name: "n8n", icon: "/icons/n8n.svg" },
 ];
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.05 } },
+  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } },
 };
 
-const cardVariants = {
-  hidden:  { opacity: 0, y: 20, scale: 0.95 },
+const itemVariants = {
+  hidden: { opacity: 0, y: 16, scale: 0.95 },
   visible: {
-    opacity: 1, y: 0, scale: 1,
+    opacity: 1,
+    y: 0,
+    scale: 1,
     transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] as const },
   },
 };
@@ -30,10 +35,10 @@ const cardVariants = {
 function SkillCard({ skill }: { skill: { name: string; icon: string } }) {
   return (
     <motion.div
-      variants={cardVariants}
-      whileHover={{ scale: 1.08 }}
+      variants={itemVariants}
+      whileHover={{ scale: 1.1 }}
       transition={{ type: "spring", stiffness: 400, damping: 20 }}
-      className="group flex flex-col items-center gap-3 cursor-default select-none"
+      className="group flex flex-col items-center gap-2.5 cursor-default select-none"
     >
       <div className="relative w-14 h-14">
         <Image
@@ -41,10 +46,10 @@ function SkillCard({ skill }: { skill: { name: string; icon: string } }) {
           alt={skill.name}
           fill
           sizes="56px"
-          className="object-contain brightness-0 invert"
+          className="object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-200"
         />
       </div>
-      <span className="font-mono text-[10px] tracking-wide text-center text-white/50 group-hover:text-white/90 transition-colors duration-150">
+      <span className="font-mono text-[9px] tracking-widest uppercase text-center text-white/30 group-hover:text-white/70 transition-colors duration-200">
         {skill.name}
       </span>
     </motion.div>
@@ -55,7 +60,7 @@ export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="w-full min-h-dvh bg-neutral-900 py-28 md:py-36 flex flex-col justify-center"
+      className="w-full min-h-dvh bg-neutral-900 py-20 md:py-28 flex flex-col justify-center"
     >
       <div className="w-full max-w-[1440px] mx-auto px-6">
         {/* Section label */}
@@ -64,46 +69,97 @@ export function SkillsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="font-mono text-xs tracking-[0.2em] uppercase text-neutral-500 mb-12"
+          className="font-mono text-xs tracking-[0.2em] uppercase text-neutral-500 mb-10"
         >
           02 / Skills
         </motion.p>
 
-        {/* Two-column layout: ~40% text card + ~60% grid */}
-        <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-16">
-
-          {/* Left: text card */}
+        {/* Main layout: left text + vertical rule + right icons */}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] gap-0 md:gap-0">
+          {/* Left: text */}
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="md:w-[38%] shrink-0 rounded-2xl border border-white/10 p-8 md:p-10"
+            className="pr-0 md:pr-32 pb-12 md:pb-0"
           >
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-8">
               What I work with
             </h2>
-            <p className="text-neutral-400 text-base leading-relaxed">
-              Placeholder text. I build modern web applications with a focus on
-              performance, developer experience, and clean interfaces.
-            </p>
+
+            <div className="space-y-8">
+              {/* Block 1 */}
+              <div className="border-t border-white/10 pt-6">
+                <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-neutral-500 mb-3">
+                  Core Stack & Frameworks
+                </p>
+                <div className="space-y-2.5 text-sm text-neutral-400 leading-relaxed">
+                  <p>
+                    Frontend Mastery: Deep expertise in TypeScript and
+                    JavaScript (ES6+).
+                  </p>
+                  <p>
+                    Frameworks: Extensive experience building production-ready
+                    applications using Next.js (React) and Angular.
+                  </p>
+                  <p>
+                    Performance & SEO: I don't just build interfaces; I optimize
+                    them. My solid understanding of SEO best practices ensures
+                    that performance and discoverability are baked into the code
+                    from day one.
+                  </p>
+                </div>
+              </div>
+
+              {/* Block 2 */}
+              <div className="border-t border-white/10 pt-6">
+                <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-neutral-500 mb-3">
+                  AI & Automation Workflow
+                </p>
+                <div className="space-y-2.5 text-sm text-neutral-400 leading-relaxed">
+                  <p>
+                    I believe in staying ahead of the curve by integrating the
+                    latest AI developments into my development cycle. I'm not
+                    just watching the AI space—I'm actively using it to build
+                    better software, faster.
+                  </p>
+                  <p>
+                    AI-Driven Development: Proficient in using tools like Claude
+                    Code to accelerate coding and refactoring.
+                  </p>
+                  <p>
+                    Workflow Automation: Experience with n8n to build custom
+                    automations and bridge the gap between different APIs and
+                    services.
+                  </p>
+                  <p>
+                    Continuous Learning: I keep a sharp eye on the rapidly
+                    evolving AI landscape to implement the most efficient tools
+                    and LLM integrations in my projects.
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Right: skills grid */}
-          <div className="flex-1 flex items-center justify-center">
+          {/* Vertical divider */}
+          <div className="hidden md:block bg-white/10" />
+
+          {/* Right: icon grid */}
+          <div className="pl-0 md:pl-32 flex items-center">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={containerVariants}
-              className="grid grid-cols-4 gap-10"
+              className="grid grid-cols-3 gap-12"
             >
               {skills.map((skill) => (
                 <SkillCard key={skill.name} skill={skill} />
               ))}
             </motion.div>
           </div>
-
         </div>
       </div>
     </section>

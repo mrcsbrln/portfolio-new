@@ -78,7 +78,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="w-full min-h-dvh bg-neutral-900 py-20 md:py-28 flex flex-col justify-center"
+      className="w-full min-h-dvh bg-neutral-900 py-20 md:py-28"
     >
       <div className="w-full max-w-360 mx-auto px-6">
         {/* Section label */}
@@ -99,7 +99,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col justify-center"
+            className="flex flex-col"
           >
             <h2 className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-6 leading-tight">
               Let's work together
@@ -173,7 +173,7 @@ export function ContactSection() {
                     ${touched.email && errors.email && !email ? "placeholder:text-red-400" : "placeholder:text-neutral-600"}`}
                 />
               </div>
-              <p className="font-mono text-[10px] tracking-widest uppercase text-red-400 min-h-[20px] pt-2">
+              <p className="font-mono text-[10px] tracking-widest uppercase text-red-400 h-6 flex items-center">
                 {touched.email && errors.email && email && !emailFocused ? errors.email : ""}
               </p>
 
@@ -200,7 +200,7 @@ export function ContactSection() {
                     ${touched.message && errors.message && !message ? "placeholder:text-red-400" : "placeholder:text-neutral-600"}`}
                 />
               </div>
-              <p className="font-mono text-[10px] tracking-widest uppercase text-red-400 min-h-[20px] pt-2">
+              <p className="font-mono text-[10px] tracking-widest uppercase text-red-400 h-6 flex items-center">
                 {touched.message && errors.message && message && !messageFocused ? errors.message : ""}
               </p>
 

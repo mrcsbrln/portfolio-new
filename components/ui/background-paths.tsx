@@ -70,7 +70,7 @@ export function BackgroundPaths({
           transition={{ duration: 2 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-4 tracking-tighter">
             {words.map((word, wordIndex) => (
               <span key={wordIndex} className="inline-block mr-4 last:mr-0">
                 {word.split("").map((letter, letterIndex) => (
@@ -94,6 +94,15 @@ export function BackgroundPaths({
               </span>
             ))}
           </h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
+            className="font-mono text-3xl tracking-widest uppercase text-neutral-500 dark:text-neutral-400 mb-6"
+          >
+            Frontend Developer
+          </motion.p>
 
           <a
             href="#about"

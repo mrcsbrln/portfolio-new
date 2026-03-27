@@ -81,7 +81,7 @@ export function AboutSection() {
 
                         <div className="flex gap-4 pt-2">
                             <a
-                                href="mailto:hello@example.com"
+                                href="#contact"
                                 className="font-mono text-xs tracking-widest uppercase text-neutral-900 dark:text-white
                                            border border-neutral-900 dark:border-white px-5 py-2.5
                                            hover:bg-neutral-900 hover:text-white

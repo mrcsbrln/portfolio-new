@@ -5,52 +5,52 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    name: "Project One",
-    description: "Short description of what this project does and the problem it solves.",
-    tags: ["Next.js", "TypeScript", "Firebase"],
-    github: "https://github.com/mrcsbrln",
-    live: "",
-    image: "",
+    name: "E-Commerce",
+    description: "Fullstack E-commerce application built with NextJS, Typescript and Prisma ORM.",
+    tags: ["Next.js", "TypeScript", "Prisma"],
+    github: "https://github.com/mrcsbrln/next-ecommerce",
+    live: "https://next-ecommerce-three-weld.vercel.app/",
+    image: "/images/projects/ecommerce.png",
   },
   {
-    name: "Project Two",
+    name: "CoinPulse",
+    description: "A cryptocurrency dashboard built with NextJS, Typescript, Tradingview, Shadcn UI and coingecko demo API.",
+    tags: ["Next.js", "TypeScript"],
+    github: "https://github.com/mrcsbrln/coinpulse",
+    live: "https://coinpulse-lime.vercel.app/",
+    image: "/images/projects/coinpulse.png",
+  },
+  {
+    name: "DA Bubble",
+    description: "Short description of what this project does and the problem it solves.",
+    tags: ["Angular", "TypeScript", "Firebase"],
+    github: "https://github.com/mrcsbrln",
+    live: "",
+    image: "/images/projects/da-bubble.png",
+  },
+  {
+    name: "Join",
+    description: "Short description of what this project does and the problem it solves.",
+    tags: ["JavaScript", "HTML", "CSS", "Firebase"],
+    github: "https://github.com/mrcsbrln",
+    live: "",
+    image: "/images/projects/join.png",
+  },
+  {
+    name: "El Pollo Loco",
+    description: "Short description of what this project does and the problem it solves.",
+    tags: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/mrcsbrln",
+    live: "",
+    image: "/images/projects/el-pollo-loco.png",
+  },
+  {
+    name: "NgMovie",
     description: "Short description of what this project does and the problem it solves.",
     tags: ["Angular", "TypeScript", "REST API"],
     github: "https://github.com/mrcsbrln",
     live: "",
-    image: "",
-  },
-  {
-    name: "Project Three",
-    description: "Short description of what this project does and the problem it solves.",
-    tags: ["Next.js", "CSS", "n8n"],
-    github: "https://github.com/mrcsbrln",
-    live: "",
-    image: "",
-  },
-  {
-    name: "Project Four",
-    description: "Short description of what this project does and the problem it solves.",
-    tags: ["React", "TypeScript", "Firebase"],
-    github: "https://github.com/mrcsbrln",
-    live: "",
-    image: "",
-  },
-  {
-    name: "Project Five",
-    description: "Short description of what this project does and the problem it solves.",
-    tags: ["Next.js", "TypeScript"],
-    github: "https://github.com/mrcsbrln",
-    live: "",
-    image: "",
-  },
-  {
-    name: "Project Six",
-    description: "Short description of what this project does and the problem it solves.",
-    tags: ["Angular", "REST API", "Git"],
-    github: "https://github.com/mrcsbrln",
-    live: "",
-    image: "",
+    image: "/images/projects/ngmovie.png",
   },
 ];
 
@@ -133,19 +133,17 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
               GitHub ↗
             </a>
           )}
-          {project.live && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-[10px] tracking-widest uppercase
-                         text-neutral-500 dark:text-neutral-400
-                         hover:text-neutral-900 dark:hover:text-white
-                         transition-colors duration-200 flex items-center gap-1.5"
-            >
-              Live ↗
-            </a>
-          )}
+          <a
+            href={project.live || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[10px] tracking-widest uppercase
+                       text-neutral-500 dark:text-neutral-400
+                       hover:text-neutral-900 dark:hover:text-white
+                       transition-colors duration-200 flex items-center gap-1.5"
+          >
+            Live ↗
+          </a>
         </div>
       </div>
     </motion.article>

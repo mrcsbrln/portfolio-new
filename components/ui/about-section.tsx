@@ -31,17 +31,20 @@ export function AboutSection() {
                         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                         className="relative"
                     >
-                        <div className="relative aspect-[4/5] w-full max-w-md rounded-2xl overflow-hidden
-                                        shadow-[0_8px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_40px_rgba(0,0,0,0.4)]
-                                        ring-1 ring-black/5 dark:ring-white/5">
-                            <Image
-                                src="/images/marcus-hartmann.jpg"
-                                alt="Marcus Hartmann"
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                priority
-                            />
+                        <div className="relative aspect-[4/5] w-full max-w-md">
+                            {/* Offset frame */}
+                            <div className="absolute inset-0 translate-x-3 translate-y-3 border border-neutral-300 dark:border-white/20" />
+                            {/* Image */}
+                            <div className="relative w-full h-full overflow-hidden">
+                                <Image
+                                    src="/images/marcus-hartmann.jpg"
+                                    alt="Marcus Hartmann"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
+                                />
+                            </div>
                         </div>
                     </motion.div>
 

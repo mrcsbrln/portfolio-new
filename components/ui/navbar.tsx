@@ -49,7 +49,7 @@ export function Navbar() {
       <div
         className={`absolute inset-0 pointer-events-none transition-opacity duration-500
                     backdrop-blur-md
-                    bg-white/80 dark:bg-neutral-950/80
+                    bg-white/50 dark:bg-neutral-950/50
                     border-b border-neutral-200/60 dark:border-neutral-800/60
                     ${pastHero ? "opacity-100" : "opacity-0"}`}
       />

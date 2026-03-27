@@ -8,11 +8,11 @@ const skills = [
   { name: "TypeScript", icon: "/icons/typescript.svg" },
   { name: "Next.js", icon: "/icons/nextjs.svg" },
   { name: "Angular", icon: "/icons/angular.svg" },
+  { name: "HTML", icon: "/icons/html.svg" },
+  { name: "CSS", icon: "/icons/css.svg" },
   { name: "Firebase", icon: "/icons/firebase.svg" },
   { name: "Git", icon: "/icons/git.svg" },
   { name: "REST API", icon: "/icons/rest-api.svg" },
-  { name: "HTML", icon: "/icons/html.svg" },
-  { name: "CSS", icon: "/icons/css.svg" },
   { name: "Claude Code", icon: "/icons/claude-color.svg" },
   { name: "n8n", icon: "/icons/n8n.svg" },
 ];

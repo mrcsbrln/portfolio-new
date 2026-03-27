@@ -62,7 +62,7 @@ export function SkillsSection() {
       id="skills"
       className="w-full min-h-dvh bg-neutral-900 py-20 md:py-28 flex flex-col justify-center"
     >
-      <div className="w-full max-w-[1440px] mx-auto px-6">
+      <div className="w-full max-w-360 mx-auto px-6">
         {/* Section label */}
         <motion.p
           initial={{ opacity: 0, y: 8 }}

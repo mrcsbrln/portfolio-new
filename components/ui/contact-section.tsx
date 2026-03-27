@@ -131,7 +131,7 @@ export function ContactSection() {
           >
             <form onSubmit={handleSubmit} className="flex flex-col">
               {/* Name */}
-              <div className="py-6">
+              <div className="border-b border-neutral-700 pb-6 pt-0">
                 <label className="block text-base font-bold tracking-tight text-white mb-3">
                   What's your name?
                 </label>
@@ -151,7 +151,7 @@ export function ContactSection() {
               </div>
 
               {/* Email */}
-              <div className="border-t border-neutral-700 py-6">
+              <div className="border-b border-neutral-700 py-6">
                 <label className="block text-base font-bold tracking-tight text-white mb-3">
                   What's your email?
                 </label>
@@ -172,15 +172,13 @@ export function ContactSection() {
                   className={`w-full bg-transparent outline-none text-sm text-neutral-300 font-mono
                     ${touched.email && errors.email && !email ? "placeholder:text-red-400" : "placeholder:text-neutral-600"}`}
                 />
-                {touched.email && errors.email && email && !emailFocused && (
-                  <p className="mt-2 font-mono text-[10px] tracking-widest uppercase text-red-400">
-                    {errors.email}
-                  </p>
-                )}
               </div>
+              <p className="font-mono text-[10px] tracking-widest uppercase text-red-400 min-h-[20px] pt-2">
+                {touched.email && errors.email && email && !emailFocused ? errors.email : ""}
+              </p>
 
               {/* Message */}
-              <div className="border-t border-neutral-700 py-6">
+              <div className="border-b border-neutral-700 py-6">
                 <label className="block text-base font-bold tracking-tight text-white mb-3">
                   How can I help you?
                 </label>
@@ -201,18 +199,13 @@ export function ContactSection() {
                   className={`w-full bg-transparent outline-none text-sm text-neutral-300 font-mono resize-none
                     ${touched.message && errors.message && !message ? "placeholder:text-red-400" : "placeholder:text-neutral-600"}`}
                 />
-                {touched.message &&
-                  errors.message &&
-                  message &&
-                  !messageFocused && (
-                    <p className="mt-2 font-mono text-[10px] tracking-widest uppercase text-red-400">
-                      {errors.message}
-                    </p>
-                  )}
               </div>
+              <p className="font-mono text-[10px] tracking-widest uppercase text-red-400 min-h-[20px] pt-2">
+                {touched.message && errors.message && message && !messageFocused ? errors.message : ""}
+              </p>
 
               {/* Privacy + Submit */}
-              <div className="border-t border-neutral-700 pt-6 flex flex-col gap-6">
+              <div className="pt-6 flex flex-col gap-6">
                 {/* Privacy checkbox */}
                 <label className="flex items-start gap-3 cursor-pointer group">
                   <div className="relative mt-0.5 shrink-0">

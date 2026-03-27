@@ -105,7 +105,7 @@ export function BackgroundPaths({
           </motion.p>
 
           <a
-            href="#about"
+            href="#contact"
             className="inline-flex items-center gap-3 font-mono text-xs tracking-widest uppercase
                         px-8 py-4
                        text-neutral-900 dark:text-white backdrop-blur-xs

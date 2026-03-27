@@ -11,7 +11,10 @@ function validate(name: string, email: string, message: string) {
   return {
     name: name.trim().length < 2 ? "Please enter your name." : "",
     email: !EMAIL_RE.test(email) ? "Please enter a valid email address." : "",
-    message: message.trim().length < 10 ? "Please enter a message (min. 10 characters)." : "",
+    message:
+      message.trim().length < 10
+        ? "Please enter a message (min. 10 characters)."
+        : "",
   };
 }
 
@@ -29,7 +32,11 @@ export function ContactSection() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [privacy, setPrivacy] = useState(false);
-  const [touched, setTouched] = useState({ name: false, email: false, message: false });
+  const [touched, setTouched] = useState({
+    name: false,
+    email: false,
+    message: false,
+  });
   const [emailFocused, setEmailFocused] = useState(false);
   const [messageFocused, setMessageFocused] = useState(false);
   const [status, setStatus] = useState<FormState>("idle");
@@ -94,10 +101,10 @@ export function ContactSection() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col justify-center"
           >
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tighter text-white mb-6 leading-tight">
+            <h2 className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-6 leading-tight">
               Let's work together
             </h2>
-            <p className="text-lg font-medium text-neutral-400 mb-4">
+            <p className="text-4xl font-medium text-neutral-400 mb-4">
               Got a problem to solve?
             </p>
             <p className="text-sm text-neutral-500 leading-relaxed mb-6">
@@ -124,7 +131,7 @@ export function ContactSection() {
           >
             <form onSubmit={handleSubmit} className="flex flex-col">
               {/* Name */}
-              <div className="border-t border-neutral-700 py-6">
+              <div className="py-6">
                 <label className="block text-base font-bold tracking-tight text-white mb-3">
                   What's your name?
                 </label>
@@ -133,7 +140,11 @@ export function ContactSection() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   onBlur={() => touch("name")}
-                  placeholder={touched.name && errors.name ? errors.name : "Your name goes here"}
+                  placeholder={
+                    touched.name && errors.name
+                      ? errors.name
+                      : "Your name goes here"
+                  }
                   className={`w-full bg-transparent outline-none text-sm text-neutral-300 font-mono
                     ${touched.name && errors.name ? "placeholder:text-red-400" : "placeholder:text-neutral-600"}`}
                 />
@@ -149,13 +160,22 @@ export function ContactSection() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   onFocus={() => setEmailFocused(true)}
-                  onBlur={() => { setEmailFocused(false); touch("email"); }}
-                  placeholder={touched.email && errors.email && !email ? errors.email : "your@email.com"}
+                  onBlur={() => {
+                    setEmailFocused(false);
+                    touch("email");
+                  }}
+                  placeholder={
+                    touched.email && errors.email && !email
+                      ? errors.email
+                      : "your@email.com"
+                  }
                   className={`w-full bg-transparent outline-none text-sm text-neutral-300 font-mono
                     ${touched.email && errors.email && !email ? "placeholder:text-red-400" : "placeholder:text-neutral-600"}`}
                 />
                 {touched.email && errors.email && email && !emailFocused && (
-                  <p className="mt-2 font-mono text-[10px] tracking-widest uppercase text-red-400">{errors.email}</p>
+                  <p className="mt-2 font-mono text-[10px] tracking-widest uppercase text-red-400">
+                    {errors.email}
+                  </p>
                 )}
               </div>
 
@@ -169,14 +189,26 @@ export function ContactSection() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   onFocus={() => setMessageFocused(true)}
-                  onBlur={() => { setMessageFocused(false); touch("message"); }}
-                  placeholder={touched.message && errors.message && !message ? errors.message : "What do you need to develop?"}
+                  onBlur={() => {
+                    setMessageFocused(false);
+                    touch("message");
+                  }}
+                  placeholder={
+                    touched.message && errors.message && !message
+                      ? errors.message
+                      : "What do you need to develop?"
+                  }
                   className={`w-full bg-transparent outline-none text-sm text-neutral-300 font-mono resize-none
                     ${touched.message && errors.message && !message ? "placeholder:text-red-400" : "placeholder:text-neutral-600"}`}
                 />
-                {touched.message && errors.message && message && !messageFocused && (
-                  <p className="mt-2 font-mono text-[10px] tracking-widest uppercase text-red-400">{errors.message}</p>
-                )}
+                {touched.message &&
+                  errors.message &&
+                  message &&
+                  !messageFocused && (
+                    <p className="mt-2 font-mono text-[10px] tracking-widest uppercase text-red-400">
+                      {errors.message}
+                    </p>
+                  )}
               </div>
 
               {/* Privacy + Submit */}
@@ -193,9 +225,10 @@ export function ContactSection() {
                     />
                     <div
                       className={`w-4 h-4 border transition-colors duration-200
-                        ${privacy
-                          ? "bg-white border-white"
-                          : "bg-transparent border-neutral-500 group-hover:border-neutral-300"
+                        ${
+                          privacy
+                            ? "bg-white border-white"
+                            : "bg-transparent border-neutral-500 group-hover:border-neutral-300"
                         }`}
                     />
                     {privacy && (
@@ -227,7 +260,7 @@ export function ContactSection() {
                 </label>
 
                 {/* Submit */}
-                <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center justify-center gap-4">
                   <div>
                     {status === "success" && (
                       <p className="font-mono text-[10px] tracking-widest uppercase text-green-400">

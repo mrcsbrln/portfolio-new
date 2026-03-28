@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 const projects = [
   {
     name: "E-Commerce",
-    description: "Fullstack E-commerce application built with NextJS, Typescript and Prisma ORM.",
+    description:
+      "Fullstack E-commerce application built with NextJS, Typescript and Prisma ORM.",
     tags: ["Next.js", "TypeScript", "Prisma"],
     github: "https://github.com/mrcsbrln/next-ecommerce",
     live: "https://next-ecommerce-three-weld.vercel.app/",
@@ -14,7 +15,8 @@ const projects = [
   },
   {
     name: "CoinPulse",
-    description: "A cryptocurrency dashboard built with NextJS, Typescript, Tradingview, Shadcn UI and coingecko demo API.",
+    description:
+      "A cryptocurrency dashboard built with NextJS, Typescript, Tradingview, Shadcn UI and coingecko demo API.",
     tags: ["Next.js", "TypeScript"],
     github: "https://github.com/mrcsbrln/coinpulse",
     live: "https://coinpulse-lime.vercel.app/",
@@ -22,7 +24,8 @@ const projects = [
   },
   {
     name: "DA Bubble",
-    description: "A Slack Clone for team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
+    description:
+      "A Slack Clone for team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
     tags: ["Angular", "TypeScript", "Firebase"],
     github: "https://github.com/DanieleDona1/DABubble",
     live: "https://dabubble.marcus-hartmann.net/",
@@ -30,7 +33,8 @@ const projects = [
   },
   {
     name: "Join",
-    description: "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+    description:
+      "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     tags: ["JavaScript", "HTML", "CSS", "Firebase"],
     github: "https://github.com/KevinPerret/Join",
     live: "https://join.marcus-hartmann.net/",
@@ -38,7 +42,8 @@ const projects = [
   },
   {
     name: "El Pollo Loco",
-    description: "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+    description:
+      "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
     tags: ["JavaScript", "HTML", "CSS"],
     github: "https://github.com/mrcsbrln/el_pollo_loco",
     live: "https://elpolloloco.marcus-hartmann.net/",
@@ -46,7 +51,8 @@ const projects = [
   },
   {
     name: "NgMovie",
-    description: "An Angular-based webpage that retrieves movie data via The Movie Database (TMDB) API.",
+    description:
+      "An Angular-based webpage that retrieves movie data via The Movie Database (TMDB) API.",
     tags: ["Angular", "TypeScript", "REST API"],
     github: "https://github.com/mrcsbrln/ng-movie",
     live: "https://ngmovie.marcus-hartmann.net/",
@@ -72,7 +78,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
     <motion.article
       variants={itemVariants}
-      className="group flex flex-col border border-neutral-200 dark:border-neutral-800 overflow-hidden"
+      className="group flex flex-col border border-neutral-200 dark:border-neutral-800 overflow-hidden bg-neutral-50 dark:bg-neutral-900"
     >
       {/* Screenshot */}
       <div className="relative aspect-video bg-neutral-100 dark:bg-neutral-800/60 overflow-hidden">
@@ -183,7 +189,7 @@ export function ProjectsSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project) => (
             <ProjectCard key={project.name} project={project} />

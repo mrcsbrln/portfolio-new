@@ -82,7 +82,7 @@ export function SkillsSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="pr-0 md:pr-32 pb-12 md:pb-0"
+            className="pr-0 md:pr-16 lg:pr-32 pb-12 md:pb-0"
           >
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-8">
               What I work with
@@ -147,7 +147,7 @@ export function SkillsSection() {
           <div className="hidden md:block bg-white/10" />
 
           {/* Right: icon grid */}
-          <div className="pl-0 md:pl-32 flex items-center">
+          <div className="pl-0 md:pl-16 lg:pl-32 flex items-center">
             <motion.div
               initial="hidden"
               whileInView="visible"

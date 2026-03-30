@@ -61,7 +61,7 @@ export function AboutSection() {
                 Marcus Hartmann
               </h2>
               <p className="font-mono text-sm text-neutral-400 dark:text-neutral-500 tracking-wide">
-                Software Engineer & Designer
+                Frontend Developer
               </p>
             </div>
 
@@ -79,7 +79,8 @@ export function AboutSection() {
                 <span className="text-neutral-900 dark:text-white font-medium">
                   What I do:
                 </span>{" "}
-                I translate complex mockups into pixel-perfect, logical code with a focus on performance and accessibility.
+                I translate complex mockups into pixel-perfect, logical code
+                with a focus on performance and accessibility.
               </p>
               <p>
                 <span className="text-neutral-900 dark:text-white font-medium">
@@ -92,7 +93,8 @@ export function AboutSection() {
                 <span className="text-neutral-900 dark:text-white font-medium">
                   The X-Factor:
                 </span>{" "}
-                I combine the analytical mindset of a Pharmacist with modern dev tools to create reliable, high-stakes-ready software.
+                I combine the analytical mindset of a Pharmacist with modern dev
+                tools to create reliable, high-stakes-ready software.
               </p>
             </div>
 

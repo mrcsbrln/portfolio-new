@@ -67,6 +67,7 @@ export function ContactSection() {
         setEmail("");
         setMessage("");
         setPrivacy(false);
+        setTouched({ name: false, email: false, message: false });
       } else {
         setStatus("error");
       }
@@ -253,19 +254,7 @@ export function ContactSection() {
                 </label>
 
                 {/* Submit */}
-                <div className="flex items-center justify-center gap-4">
-                  <div>
-                    {status === "success" && (
-                      <p className="font-mono text-[10px] tracking-widest uppercase text-green-400">
-                        Message sent successfully.
-                      </p>
-                    )}
-                    {status === "error" && (
-                      <p className="font-mono text-[10px] tracking-widest uppercase text-red-400">
-                        Something went wrong. Please try again.
-                      </p>
-                    )}
-                  </div>
+                <div className="flex flex-col items-end gap-3">
                   <button
                     type="submit"
                     disabled={status === "loading" || !isValid}
@@ -276,6 +265,14 @@ export function ContactSection() {
                   >
                     {status === "loading" ? "Sending..." : "Say hello :)"}
                   </button>
+                  <p className="font-mono text-[10px] tracking-widest uppercase h-4 flex items-center">
+                    {status === "success" && (
+                      <span className="text-green-400">Message sent successfully.</span>
+                    )}
+                    {status === "error" && (
+                      <span className="text-red-400">Something went wrong. Please try again.</span>
+                    )}
+                  </p>
                 </div>
               </div>
             </form>

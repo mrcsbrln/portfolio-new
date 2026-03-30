@@ -17,6 +17,28 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Frontend Developer | Marcus Hartmann",
   description: "Frontend Developer from Berlin",
+  openGraph: {
+    title: "Marcus Hartmann — Frontend Developer",
+    description: "Frontend Developer from Berlin",
+    url: "https://marcus-hartmann.net",
+    siteName: "Marcus Hartmann",
+    images: [
+      {
+        url: "https://marcus-hartmann.net/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Marcus Hartmann — Frontend Developer",
+      },
+    ],
+    locale: "de_DE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marcus Hartmann — Frontend Developer",
+    description: "Frontend Developer from Berlin",
+    images: ["https://marcus-hartmann.net/og-image.png"],
+  },
 };
 
 export default function RootLayout({

@@ -26,28 +26,49 @@ export default function ImprintPage() {
         Back
       </a>
       <h1 className="font-mono text-2xl font-bold tracking-tight text-neutral-900 dark:text-white mb-8">
-        Imprint
+        Impressum
       </h1>
-      <div className="prose prose-neutral dark:prose-invert max-w-none text-sm text-neutral-600 dark:text-neutral-400 space-y-4">
-        <p>
-          <strong className="text-neutral-900 dark:text-white">Marcus Hartmann</strong>
-          <br />
-          Berlin, Germany
-        </p>
-        <p>
-          <strong className="text-neutral-900 dark:text-white">Contact</strong>
-          <br />
-          E-Mail:{" "}
-          <a
-            href="mailto:hello@marcushartmann.dev"
-            className="text-neutral-900 dark:text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
-          >
-            hello@marcushartmann.dev
-          </a>
-        </p>
-        <p className="text-xs text-neutral-400 dark:text-neutral-500 pt-4">
-          Responsible for content according to § 55 Abs. 2 RStV: Marcus Hartmann
-        </p>
+      <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-6 max-w-2xl">
+        <section className="space-y-1">
+          <h2 className="font-medium text-neutral-900 dark:text-white">
+            Angaben gemäß § 5 TMG
+          </h2>
+          <p>
+            Marcus Hartmann
+            <br />
+            Liegnitzer Str. 16
+            <br />
+            10999 Berlin
+          </p>
+        </section>
+
+        <section className="space-y-1">
+          <h2 className="font-medium text-neutral-900 dark:text-white">Kontakt</h2>
+          <p>
+            Telefon: +49 151 40306800
+            <br />
+            E-Mail:{" "}
+            <a
+              href="mailto:info@marcus-hartmann.net"
+              className="text-neutral-900 dark:text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
+            >
+              info@marcus-hartmann.net
+            </a>
+          </p>
+        </section>
+
+        <section className="space-y-1">
+          <h2 className="font-medium text-neutral-900 dark:text-white">
+            Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
+          </h2>
+          <p>
+            Marcus Hartmann
+            <br />
+            Liegnitzer Str. 16
+            <br />
+            10999 Berlin
+          </p>
+        </section>
       </div>
     </main>
   );

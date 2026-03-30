@@ -13,7 +13,7 @@ export function Footer() {
                          hover:text-neutral-900 dark:hover:text-white
                          transition-colors duration-200 group"
             >
-              Imprint
+              Impressum
               <span
                 className="absolute -bottom-px left-0 h-px w-0 bg-neutral-900 dark:bg-white
                            transition-all duration-300 ease-out group-hover:w-full"
@@ -25,7 +25,7 @@ export function Footer() {
                          hover:text-neutral-900 dark:hover:text-white
                          transition-colors duration-200 group"
             >
-              Privacy
+              Datenschutz
               <span
                 className="absolute -bottom-px left-0 h-px w-0 bg-neutral-900 dark:bg-white
                            transition-all duration-300 ease-out group-hover:w-full"

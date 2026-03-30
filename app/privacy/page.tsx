@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Privacy Policy | Marcus Hartmann",
+  title: "Datenschutz | Marcus Hartmann",
 };
 
 export default function PrivacyPage() {
@@ -26,54 +26,106 @@ export default function PrivacyPage() {
         Back
       </a>
       <h1 className="font-mono text-2xl font-bold tracking-tight text-neutral-900 dark:text-white mb-8">
-        Privacy Policy
+        Datenschutzerklärung
       </h1>
-      <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-6 max-w-2xl">
-        <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">1. Data Controller</h2>
-          <p>
-            Marcus Hartmann, Berlin, Germany.
-          </p>
-        </section>
+      <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-8 max-w-2xl">
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">2. Data Collected</h2>
+          <h2 className="font-medium text-neutral-900 dark:text-white">1. Verantwortlicher</h2>
           <p>
-            This website does not use cookies, tracking scripts, or analytics tools. No personal data
-            is collected, stored, or shared with third parties when you browse this site.
-          </p>
-        </section>
-
-        <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">3. Contact Form</h2>
-          <p>
-            If you contact me via the contact form, your message and e-mail address are used solely
-            to respond to your inquiry and will not be passed on to third parties.
-          </p>
-        </section>
-
-        <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">4. External Links</h2>
-          <p>
-            This site contains links to external platforms (GitHub, LinkedIn). These providers have
-            their own privacy policies which apply once you leave this site.
-          </p>
-        </section>
-
-        <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">5. Your Rights</h2>
-          <p>
-            Under GDPR you have the right to access, rectify, or erase any personal data held about
-            you. Contact me at{" "}
+            Marcus Hartmann<br />
+            Liegnitzer Str. 16<br />
+            10999 Berlin<br />
+            E-Mail:{" "}
             <a
-              href="mailto:hello@marcushartmann.dev"
+              href="mailto:info@marcus-hartmann.net"
               className="text-neutral-900 dark:text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
             >
-              hello@marcushartmann.dev
-            </a>{" "}
-            for any such requests.
+              info@marcus-hartmann.net
+            </a>
           </p>
         </section>
+
+        <section className="space-y-2">
+          <h2 className="font-medium text-neutral-900 dark:text-white">2. Hosting</h2>
+          <p>
+            Diese Website wird gehostet von ALL-INKL.COM – Neue Medien Münnich, Hauptstraße 68,
+            02742 Friedersdorf. Beim Aufruf der Website werden durch den Hoster automatisch
+            Server-Logfiles erfasst (z.&nbsp;B. IP-Adresse, Browsertyp, aufgerufene Seite,
+            Datum und Uhrzeit). Diese Daten sind technisch notwendig zur Bereitstellung der
+            Website und werden nicht mit anderen Datenquellen zusammengeführt.
+            Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes
+            Interesse am stabilen Betrieb der Website). Die Datenschutzerklärung von ALL-INKL.COM
+            findest du unter{" "}
+            <a
+              href="https://all-inkl.com/datenschutzinformationen/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-900 dark:text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
+            >
+              all-inkl.com/datenschutzinformationen
+            </a>
+            .
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="font-medium text-neutral-900 dark:text-white">3. Kontaktformular</h2>
+          <p>
+            Wenn du das Kontaktformular nutzt, werden dein Name, deine E-Mail-Adresse und deine
+            Nachricht an einen PHP-Mailversand-Dienst auf meinem Server übermittelt und
+            ausschließlich zur Bearbeitung deiner Anfrage verwendet. Die Daten werden nicht an
+            Dritte weitergegeben und nach Abschluss der Kommunikation gelöscht, sofern keine
+            gesetzlichen Aufbewahrungspflichten bestehen. Rechtsgrundlage ist
+            Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Vertragsanbahnung) bzw.
+            Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse an der
+            Beantwortung von Anfragen).
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="font-medium text-neutral-900 dark:text-white">4. Cookies & Tracking</h2>
+          <p>
+            Diese Website verwendet keine Cookies und keinerlei Tracking- oder
+            Analyse-Tools. Es werden keine Nutzungsprofile erstellt.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="font-medium text-neutral-900 dark:text-white">5. Schriftarten</h2>
+          <p>
+            Diese Website verwendet die Schriftart „Geist" von Vercel. Die Schriftdateien
+            werden beim Build-Prozess heruntergeladen und auf dem eigenen Server ausgeliefert.
+            Es findet keine Verbindung zu externen Servern statt.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="font-medium text-neutral-900 dark:text-white">6. Externe Links</h2>
+          <p>
+            Diese Website enthält Links zu externen Diensten (GitHub, LinkedIn). Sobald du
+            diese Links aufrufst, gelten die Datenschutzbestimmungen der jeweiligen Anbieter.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="font-medium text-neutral-900 dark:text-white">7. Deine Rechte</h2>
+          <p>
+            Du hast nach der DSGVO das Recht auf Auskunft (Art.&nbsp;15), Berichtigung
+            (Art.&nbsp;16), Löschung (Art.&nbsp;17), Einschränkung der Verarbeitung
+            (Art.&nbsp;18), Datenübertragbarkeit (Art.&nbsp;20) sowie Widerspruch
+            (Art.&nbsp;21). Zur Ausübung deiner Rechte wende dich an{" "}
+            <a
+              href="mailto:info@marcus-hartmann.net"
+              className="text-neutral-900 dark:text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
+            >
+              info@marcus-hartmann.net
+            </a>
+            . Außerdem steht dir ein Beschwerderecht bei der zuständigen
+            Datenschutzaufsichtsbehörde zu.
+          </p>
+        </section>
+
       </div>
     </main>
   );

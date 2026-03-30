@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
+const CONTACT_ENDPOINT = "https://marcus-hartmann.net/sendMail.php";
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function validate(name: string, email: string, message: string) {
@@ -55,7 +57,7 @@ export function ContactSection() {
     setStatus("loading");
 
     try {
-      const res = await fetch("https://marcus-hartmann.net/sendMail.php", {
+      const res = await fetch(CONTACT_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),

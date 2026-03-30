@@ -9,7 +9,7 @@ export function AboutSection() {
       id="about"
       className="w-full bg-white dark:bg-neutral-950 py-28 md:py-36"
     >
-      <div className="max-w-[1440px] mx-auto px-6">
+      <div className="max-w-360 mx-auto px-6">
         {/* Section label */}
         <motion.p
           initial={{ opacity: 0, y: 8 }}
@@ -31,7 +31,7 @@ export function AboutSection() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] w-full max-w-md">
+            <div className="relative aspect-4/5 w-full max-w-md">
               {/* Offset frame */}
               <div className="absolute inset-0 translate-x-3 translate-y-3 border border-neutral-300 dark:border-white/20" />
               {/* Image */}

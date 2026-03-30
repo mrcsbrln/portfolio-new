@@ -54,7 +54,7 @@ export function Navbar() {
       <div
         className="absolute inset-0 pointer-events-none backdrop-blur-md
                    bg-white/50 dark:bg-neutral-950/50
-                   border-b border-white dark:border-black"
+                   border-b border-white dark:border-neutral-950"
       />
 
       <div className="relative mx-auto max-w-360 px-6 py-5">

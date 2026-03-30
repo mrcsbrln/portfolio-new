@@ -110,11 +110,11 @@ export function ContactSection() {
             <p className="text-4xl font-medium text-neutral-400 mb-4">
               Got a problem to solve?
             </p>
-            <p className="text-sm text-neutral-500 leading-relaxed mb-6">
+            <p className="text-md text-neutral-500 leading-relaxed mb-6">
               Contact me through this form. I am interested in hearing from you,
               knowing your ideas and contributing to your projects with my work.
             </p>
-            <p className="text-sm text-neutral-400">
+            <p className="text-md text-neutral-400">
               Need a Frontend developer?{" "}
               <a
                 href="mailto:info@marcus-hartmann.net"
@@ -177,7 +177,9 @@ export function ContactSection() {
                 />
               </div>
               <p className="font-mono text-[10px] tracking-widest uppercase text-red-400 h-6 flex items-center">
-                {touched.email && errors.email && email && !emailFocused ? errors.email : ""}
+                {touched.email && errors.email && email && !emailFocused
+                  ? errors.email
+                  : ""}
               </p>
 
               {/* Message */}
@@ -204,7 +206,9 @@ export function ContactSection() {
                 />
               </div>
               <p className="font-mono text-[10px] tracking-widest uppercase text-red-400 h-6 flex items-center">
-                {touched.message && errors.message && message && !messageFocused ? errors.message : ""}
+                {touched.message && errors.message && message && !messageFocused
+                  ? errors.message
+                  : ""}
               </p>
 
               {/* Privacy + Submit */}
@@ -269,10 +273,14 @@ export function ContactSection() {
                   </button>
                   <p className="font-mono text-[10px] tracking-widest uppercase h-4 flex items-center">
                     {status === "success" && (
-                      <span className="text-green-400">Message sent successfully.</span>
+                      <span className="text-green-400">
+                        Message sent successfully.
+                      </span>
                     )}
                     {status === "error" && (
-                      <span className="text-red-400">Something went wrong. Please try again.</span>
+                      <span className="text-red-400">
+                        Something went wrong. Please try again.
+                      </span>
                     )}
                   </p>
                 </div>

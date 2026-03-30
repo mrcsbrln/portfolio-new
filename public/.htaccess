@@ -2,10 +2,12 @@ Options -MultiViews
 AddType image/svg+xml .svg
 
 RewriteEngine On
+RewriteBase /
 
-# Serve existing files and directories directly
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+# Never redirect requests that have a file extension (css, js, svg, png, …)
+RewriteRule ^.+\.[a-zA-Z0-9]+$ - [L]
 
 # Add trailing slash for clean URLs (matches trailingSlash: true build output)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*[^/])$ /$1/ [R=301,L]

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 const skills = [
@@ -40,12 +39,12 @@ function SkillCard({ skill }: { skill: { name: string; icon: string } }) {
       transition={{ type: "spring", stiffness: 400, damping: 20 }}
       className="group flex flex-col items-center gap-2.5 cursor-default select-none"
     >
-      <div className="relative w-14 h-14">
-        <Image
+      <div className="w-14 h-14 flex items-center justify-center">
+        <img
           src={skill.icon}
           alt={skill.name}
-          fill
-          sizes="56px"
+          width={56}
+          height={56}
           className="object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-200"
         />
       </div>

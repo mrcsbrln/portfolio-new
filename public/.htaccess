@@ -1,4 +1,6 @@
 Options -MultiViews
+AddType image/svg+xml .svg
+
 RewriteEngine On
 
 # Serve existing files and directories directly

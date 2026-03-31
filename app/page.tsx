@@ -3,6 +3,7 @@ import { AboutSection } from "@/components/ui/about-section";
 import { SkillsSection } from "@/components/ui/skills-section";
 import { ProjectsSection } from "@/components/ui/projects-section";
 import { ContactSection } from "@/components/ui/contact-section";
+import { ChatWidget } from "@/components/ui/chat-widget";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <SkillsSection />
       <ProjectsSection />
       <ContactSection />
+      <ChatWidget />
     </>
   );
 }

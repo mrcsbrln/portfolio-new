@@ -1,0 +1,15 @@
+{"type":"server-started","port":60721,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:60721","screen_dir":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227"}
+{"type":"screen-added","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/widget-position.html"}
+{"type":"screen-updated","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/widget-position.html"}
+{"source":"user-event","type":"click","text":"ASK ME\n      \n      \n        Portfolio\n      \n    \n    \n      Seitlicher Tab\n      \n        Auffälliger \"Ask Me\"-Tab am Seitenrand — betont den Recruiter-Fokus.","choice":"fixed-tab","id":null,"timestamp":1774974324630}
+{"type":"screen-added","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/waiting-1.html"}
+{"type":"screen-updated","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/waiting-1.html"}
+{"type":"screen-added","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/chat-window-style.html"}
+{"type":"screen-updated","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/chat-window-style.html"}
+{"type":"screen-added","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/waiting-2.html"}
+{"type":"screen-updated","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/waiting-2.html"}
+{"type":"screen-added","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/design-overview.html"}
+{"type":"screen-updated","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/design-overview.html"}
+{"type":"screen-added","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/design-color-update.html"}
+{"type":"screen-updated","file":"/Users/marcushartmann/Dev/portfolio-new/.superpowers/brainstorm/83200-1774974227/design-color-update.html"}
+{"type":"server-stopped","reason":"idle timeout"}

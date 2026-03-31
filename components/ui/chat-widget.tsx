@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 import { AnimatePresence, motion } from "framer-motion";
 
 type Message = { id: string; role: "assistant" | "user"; content: string };
@@ -68,15 +69,14 @@ export function ChatWidget() {
 
       if (!res.ok) throw new Error("non-2xx");
 
-      const data = await res.json();
-      const reply = typeof data?.reply === "string" ? data.reply : null;
+      const reply = await res.text();
 
       setMessages((prev) => [
         ...prev,
         {
           id: crypto.randomUUID(),
           role: "assistant",
-          content: reply ?? ERROR_MSG,
+          content: reply.trim() || ERROR_MSG,
         },
       ]);
     } catch {
@@ -132,7 +132,39 @@ export function ChatWidget() {
                       : "self-end bg-[#fafafa] text-[#0a0a0a] font-medium rounded-br-[3px]"
                   }`}
                 >
-                  {msg.content}
+                  {msg.role === "assistant" ? (
+                    <ReactMarkdown
+                      components={{
+                        p: ({ children }) => (
+                          <p className="mb-1 last:mb-0">{children}</p>
+                        ),
+                        strong: ({ children }) => (
+                          <strong className="font-semibold text-[#ccc]">
+                            {children}
+                          </strong>
+                        ),
+                        h3: ({ children }) => (
+                          <p className="font-semibold text-[#ccc] mt-2 mb-0.5">
+                            {children}
+                          </p>
+                        ),
+                        ul: ({ children }) => (
+                          <ul className="list-none pl-0 space-y-0.5">
+                            {children}
+                          </ul>
+                        ),
+                        li: ({ children }) => (
+                          <li className="before:content-['–'] before:mr-1.5 before:text-[#555]">
+                            {children}
+                          </li>
+                        ),
+                      }}
+                    >
+                      {msg.content}
+                    </ReactMarkdown>
+                  ) : (
+                    msg.content
+                  )}
                 </div>
               ))}
 

@@ -1,0 +1,154 @@
+<h2>Wo soll das Chat-Widget erscheinen?</h2>
+<p class="subtitle">
+  Wähle die Position des Chat-Buttons auf deiner Portfolio-Seite
+</p>
+
+<div class="cards">
+  <div class="card" data-choice="bottom-right" onclick="toggleSelect(this)">
+    <div
+      class="card-image"
+      style="
+        background: #0f0f0f;
+        border-radius: 8px;
+        padding: 16px;
+        position: relative;
+        height: 140px;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          bottom: 12px;
+          right: 12px;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #6366f1, #8b5cf6);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 20px;
+          box-shadow: 0 4px 12px rgba(99, 102, 241, 0.5);
+        "
+      >
+        💬
+      </div>
+      <div
+        style="
+          color: #555;
+          font-size: 11px;
+          position: absolute;
+          top: 8px;
+          left: 8px;
+        "
+      >
+        Portfolio
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Unten rechts</h3>
+      <p>
+        Standard-Position — Nutzer erwarten Chat hier. Subtil und nicht störend.
+      </p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="bottom-left" onclick="toggleSelect(this)">
+    <div
+      class="card-image"
+      style="
+        background: #0f0f0f;
+        border-radius: 8px;
+        padding: 16px;
+        position: relative;
+        height: 140px;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          bottom: 12px;
+          left: 12px;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #6366f1, #8b5cf6);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 20px;
+          box-shadow: 0 4px 12px rgba(99, 102, 241, 0.5);
+        "
+      >
+        💬
+      </div>
+      <div
+        style="
+          color: #555;
+          font-size: 11px;
+          position: absolute;
+          top: 8px;
+          left: 8px;
+        "
+      >
+        Portfolio
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Unten links</h3>
+      <p>Ungewöhnlichere Position — hebt sich ab, bleibt aber unauffällig.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="fixed-tab" onclick="toggleSelect(this)">
+    <div
+      class="card-image"
+      style="
+        background: #0f0f0f;
+        border-radius: 8px;
+        padding: 16px;
+        position: relative;
+        height: 140px;
+      "
+    >
+      <div
+        style="
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          background: linear-gradient(135deg, #6366f1, #8b5cf6);
+          color: white;
+          font-size: 11px;
+          padding: 8px 6px;
+          border-radius: 6px 0 0 6px;
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+          letter-spacing: 1px;
+          font-weight: 600;
+        "
+      >
+        ASK ME
+      </div>
+      <div
+        style="
+          color: #555;
+          font-size: 11px;
+          position: absolute;
+          top: 8px;
+          left: 8px;
+        "
+      >
+        Portfolio
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Seitlicher Tab</h3>
+      <p>
+        Auffälliger "Ask Me"-Tab am Seitenrand — betont den Recruiter-Fokus.
+      </p>
+    </div>
+  </div>
+</div>

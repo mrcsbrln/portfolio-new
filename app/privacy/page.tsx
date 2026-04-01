@@ -29,13 +29,17 @@ export default function PrivacyPage() {
         Datenschutzerklärung
       </h1>
       <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-8 max-w-2xl">
-
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">1. Verantwortlicher</h2>
+          <h2 className="font-medium text-neutral-900 dark:text-white">
+            1. Verantwortlicher
+          </h2>
           <p>
-            Marcus Hartmann<br />
-            Liegnitzer Str. 16<br />
-            10999 Berlin<br />
+            Marcus Hartmann
+            <br />
+            Liegnitzer Str. 16
+            <br />
+            10999 Berlin
+            <br />
             E-Mail:{" "}
             <a
               href="mailto:info@marcus-hartmann.net"
@@ -47,16 +51,19 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">2. Hosting</h2>
+          <h2 className="font-medium text-neutral-900 dark:text-white">
+            2. Hosting
+          </h2>
           <p>
-            Diese Website wird gehostet von ALL-INKL.COM – Neue Medien Münnich, Hauptstraße 68,
-            02742 Friedersdorf. Beim Aufruf der Website werden durch den Hoster automatisch
-            Server-Logfiles erfasst (z.&nbsp;B. IP-Adresse, Browsertyp, aufgerufene Seite,
-            Datum und Uhrzeit). Diese Daten sind technisch notwendig zur Bereitstellung der
-            Website und werden nicht mit anderen Datenquellen zusammengeführt.
-            Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes
-            Interesse am stabilen Betrieb der Website). Die Datenschutzerklärung von ALL-INKL.COM
-            findest du unter{" "}
+            Diese Website wird gehostet von ALL-INKL.COM – Neue Medien Münnich,
+            Hauptstraße 68, 02742 Friedersdorf. Beim Aufruf der Website werden
+            durch den Hoster automatisch Server-Logfiles erfasst (z.&nbsp;B.
+            IP-Adresse, Browsertyp, aufgerufene Seite, Datum und Uhrzeit). Diese
+            Daten sind technisch notwendig zur Bereitstellung der Website und
+            werden nicht mit anderen Datenquellen zusammengeführt.
+            Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
+            (berechtigtes Interesse am stabilen Betrieb der Website). Die
+            Datenschutzerklärung von ALL-INKL.COM findest du unter{" "}
             <a
               href="https://all-inkl.com/datenschutzinformationen/"
               target="_blank"
@@ -70,21 +77,46 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">3. Kontaktformular</h2>
+          <h2 className="font-medium text-neutral-900 dark:text-white">
+            3. Kontaktformular
+          </h2>
           <p>
-            Wenn du das Kontaktformular nutzt, werden dein Name, deine E-Mail-Adresse und deine
-            Nachricht an einen PHP-Mailversand-Dienst auf meinem Server übermittelt und
-            ausschließlich zur Bearbeitung deiner Anfrage verwendet. Die Daten werden nicht an
-            Dritte weitergegeben und nach Abschluss der Kommunikation gelöscht, sofern keine
-            gesetzlichen Aufbewahrungspflichten bestehen. Rechtsgrundlage ist
-            Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Vertragsanbahnung) bzw.
-            Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse an der
-            Beantwortung von Anfragen).
+            Wenn du das Kontaktformular nutzt, werden dein Name, deine
+            E-Mail-Adresse und deine Nachricht an einen PHP-Mailversand-Dienst
+            auf meinem Server übermittelt und ausschließlich zur Bearbeitung
+            deiner Anfrage verwendet. Die Daten werden nicht an Dritte
+            weitergegeben und nach Abschluss der Kommunikation gelöscht, sofern
+            keine gesetzlichen Aufbewahrungspflichten bestehen. Rechtsgrundlage
+            ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO (Vertragsanbahnung)
+            bzw. Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes
+            Interesse an der Beantwortung von Anfragen).
           </p>
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">4. Cookies & Tracking</h2>
+          <h2 className="font-medium text-neutral-900 dark:text-white">
+            4. Chat-Widget & KI-Verarbeitung
+          </h2>
+          <p>
+            Diese Website enthält ein Chat-Widget, über das du Fragen zu meiner
+            Person stellen kannst. Deine Eingaben werden per verschlüsselter
+            HTTPS-Verbindung an einen Automatisierungsserver (n8n) übermittelt,
+            der auf einem Hetzner-Server in Nürnberg, Deutschland betrieben
+            wird. Die Verarbeitung deiner Nachricht erfolgt durch das
+            KI-Sprachmodell Mistral (Mistral AI, Frankreich). Es werden keine
+            Nachrichten dauerhaft gespeichert; der Gesprächsverlauf wird
+            ausschließlich für die Dauer der Sitzung im Arbeitsspeicher
+            vorgehalten und anschließend verworfen. Rechtsgrundlage ist
+            Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse an
+            der Beantwortung von Anfragen). Die Nutzung des Chat-Widgets ist
+            freiwillig.
+          </p>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="font-medium text-neutral-900 dark:text-white">
+            5. Cookies & Tracking
+          </h2>
           <p>
             Diese Website verwendet keine Cookies und keinerlei Tracking- oder
             Analyse-Tools. Es werden keine Nutzungsprofile erstellt.
@@ -92,29 +124,38 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">5. Schriftarten</h2>
+          <h2 className="font-medium text-neutral-900 dark:text-white">
+            6. Schriftarten
+          </h2>
           <p>
-            Diese Website verwendet die Schriftart „Geist" von Vercel. Die Schriftdateien
-            werden beim Build-Prozess heruntergeladen und auf dem eigenen Server ausgeliefert.
-            Es findet keine Verbindung zu externen Servern statt.
+            Diese Website verwendet die Schriftart „Geist" von Vercel. Die
+            Schriftdateien werden beim Build-Prozess heruntergeladen und auf dem
+            eigenen Server ausgeliefert. Es findet keine Verbindung zu externen
+            Servern statt.
           </p>
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">6. Externe Links</h2>
+          <h2 className="font-medium text-neutral-900 dark:text-white">
+            7. Externe Links
+          </h2>
           <p>
-            Diese Website enthält Links zu externen Diensten (GitHub, LinkedIn). Sobald du
-            diese Links aufrufst, gelten die Datenschutzbestimmungen der jeweiligen Anbieter.
+            Diese Website enthält Links zu externen Diensten (GitHub, LinkedIn).
+            Sobald du diese Links aufrufst, gelten die Datenschutzbestimmungen
+            der jeweiligen Anbieter.
           </p>
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">7. Deine Rechte</h2>
+          <h2 className="font-medium text-neutral-900 dark:text-white">
+            8. Deine Rechte
+          </h2>
           <p>
-            Du hast nach der DSGVO das Recht auf Auskunft (Art.&nbsp;15), Berichtigung
-            (Art.&nbsp;16), Löschung (Art.&nbsp;17), Einschränkung der Verarbeitung
-            (Art.&nbsp;18), Datenübertragbarkeit (Art.&nbsp;20) sowie Widerspruch
-            (Art.&nbsp;21). Zur Ausübung deiner Rechte wende dich an{" "}
+            Du hast nach der DSGVO das Recht auf Auskunft (Art.&nbsp;15),
+            Berichtigung (Art.&nbsp;16), Löschung (Art.&nbsp;17), Einschränkung
+            der Verarbeitung (Art.&nbsp;18), Datenübertragbarkeit (Art.&nbsp;20)
+            sowie Widerspruch (Art.&nbsp;21). Zur Ausübung deiner Rechte wende
+            dich an{" "}
             <a
               href="mailto:info@marcus-hartmann.net"
               className="text-neutral-900 dark:text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
@@ -125,7 +166,6 @@ export default function PrivacyPage() {
             Datenschutzaufsichtsbehörde zu.
           </p>
         </section>
-
       </div>
     </main>
   );

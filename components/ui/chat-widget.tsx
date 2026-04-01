@@ -105,7 +105,7 @@ export function ChatWidget() {
             <div className="flex items-center justify-between px-4 py-3 bg-[#111] border-b border-[#1f1f1f]">
               <div>
                 <p className="text-sm font-semibold text-[#fafafa]">
-                  Frag mich alles
+                  Ask my AI-Assitant
                 </p>
                 <p className="text-[10px] text-[#666] mt-0.5">● Bereit</p>
               </div>

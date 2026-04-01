@@ -8,7 +8,9 @@ import { ChatWidget } from "@/components/ui/chat-widget";
 export default function Home() {
   return (
     <>
-      <BackgroundPaths title="Marcus Hartmann" />
+      <div id="hero">
+        <BackgroundPaths title="Marcus Hartmann" />
+      </div>
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />

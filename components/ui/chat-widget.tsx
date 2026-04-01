@@ -28,10 +28,22 @@ export function ChatWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Auto-open on md+ (≥768px)
+  // On desktop (≥768px): open once the hero section has scrolled out of view
   useEffect(() => {
-    const mql = window.matchMedia("(min-width: 768px)");
-    setIsOpen(mql.matches);
+    if (!window.matchMedia("(min-width: 768px)").matches) return;
+
+    const hero = document.getElementById("hero");
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) setIsOpen(true);
+      },
+      { threshold: 0 },
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
   }, []);
 
   // Scroll to bottom on every new message

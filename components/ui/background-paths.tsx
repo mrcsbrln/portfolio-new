@@ -19,7 +19,7 @@ function FloatingPaths({ position }: { position: number }) {
   return (
     <div className="absolute inset-0 pointer-events-none">
       <svg
-        className="w-full h-full text-slate-950 dark:text-white"
+        className="w-full h-full text-white"
         viewBox="0 0 696 316"
         fill="none"
       >
@@ -57,7 +57,7 @@ export function BackgroundPaths({
   const words = title.split(" ");
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950">
+    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-neutral-950">
       <div className="absolute inset-0">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />
@@ -85,8 +85,7 @@ export function BackgroundPaths({
                       damping: 25,
                     }}
                     className="inline-block text-transparent bg-clip-text
-                                        bg-linear-to-r from-neutral-900 to-neutral-700/80
-                                        dark:from-white dark:to-white/80"
+                                        bg-linear-to-r from-white to-white/80"
                   >
                     {letter}
                   </motion.span>
@@ -99,7 +98,7 @@ export function BackgroundPaths({
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
-            className="font-mono text-3xl tracking-widest uppercase text-neutral-500 dark:text-neutral-400 mb-6"
+            className="font-mono text-3xl tracking-widest uppercase text-neutral-400 mb-6"
           >
             Frontend Developer
           </motion.p>
@@ -108,10 +107,9 @@ export function BackgroundPaths({
             href="#contact"
             className="inline-flex items-center gap-3 font-mono text-xs tracking-widest uppercase
                         px-8 py-4
-                       text-neutral-900 dark:text-white backdrop-blur-xs
-                       bg-black/10 dark:bg-white/10 
-                       hover:bg-neutral-900 hover:text-white 
-                       dark:hover:bg-white/60 dark:hover:text-neutral-900
+                       text-white backdrop-blur-xs
+                       bg-white/10
+                       hover:bg-white/60 hover:text-neutral-900
                        transition-colors duration-200"
           >
             Contact me

@@ -2,41 +2,41 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-neutral-200/60 dark:border-neutral-800/60 bg-white/50 dark:bg-neutral-950/50 backdrop-blur-sm">
+    <footer className="border-t border-neutral-800/60 bg-neutral-950/50 backdrop-blur-sm">
       <div className="mx-auto max-w-360 px-6 py-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Legal links */}
           <nav className="flex items-center gap-6">
             <a
               href="/imprint"
-              className="relative text-sm text-neutral-500 dark:text-neutral-400
-                         hover:text-neutral-900 dark:hover:text-white
+              className="relative text-sm text-neutral-400
+                         hover:text-white
                          transition-colors duration-200 group"
             >
               Impressum
               <span
-                className="absolute -bottom-px left-0 h-px w-0 bg-neutral-900 dark:bg-white
+                className="absolute -bottom-px left-0 h-px w-0 bg-white
                            transition-all duration-300 ease-out group-hover:w-full"
               />
             </a>
             <a
               href="/privacy"
-              className="relative text-sm text-neutral-500 dark:text-neutral-400
-                         hover:text-neutral-900 dark:hover:text-white
+              className="relative text-sm text-neutral-400
+                         hover:text-white
                          transition-colors duration-200 group"
             >
               Datenschutz
               <span
-                className="absolute -bottom-px left-0 h-px w-0 bg-neutral-900 dark:bg-white
+                className="absolute -bottom-px left-0 h-px w-0 bg-white
                            transition-all duration-300 ease-out group-hover:w-full"
               />
             </a>
           </nav>
 
           {/* Copyright */}
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+          <p className="text-sm text-neutral-400">
             &copy; {year}{" "}
-            <span className="font-medium text-neutral-500 dark:text-neutral-400">
+            <span className="font-medium text-neutral-400">
               Marcus Hartmann
             </span>
           </p>
@@ -48,7 +48,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200"
+              className="text-neutral-400 hover:text-white transition-colors duration-200"
             >
               <svg
                 width="18"
@@ -64,7 +64,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200"
+              className="text-neutral-400 hover:text-white transition-colors duration-200"
             >
               <svg
                 width="18"

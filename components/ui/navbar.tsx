@@ -53,8 +53,8 @@ export function Navbar() {
       {/* Glass backdrop */}
       <div
         className="absolute inset-0 pointer-events-none backdrop-blur-md
-                   bg-white/50 dark:bg-neutral-950/50
-                   border-b border-white dark:border-neutral-950"
+                   bg-neutral-950/50
+                   border-b border-neutral-950"
       />
 
       <div className="relative mx-auto max-w-360 px-6 py-5">
@@ -65,10 +65,10 @@ export function Navbar() {
             aria-label="Marcus Hartmann — Home"
             className="flex items-baseline gap-0 group"
           >
-            <span className="font-mono text-base font-bold tracking-tight text-neutral-900 dark:text-white select-none">
+            <span className="font-mono text-base font-bold tracking-tight text-white select-none">
               MH
             </span>
-            <span className="font-mono text-base font-bold text-neutral-400 dark:text-neutral-500 select-none animate-[cursor-blink_1.1s_step-end_infinite]">
+            <span className="font-mono text-base font-bold text-neutral-500 select-none animate-[cursor-blink_1.1s_step-end_infinite]">
               _
             </span>
           </a>
@@ -88,13 +88,13 @@ export function Navbar() {
               >
                 <a
                   href={item.href}
-                  className="relative text-sm font-medium text-neutral-500 dark:text-neutral-400
-                             hover:text-neutral-900 dark:hover:text-white
+                  className="relative text-sm font-medium text-neutral-400
+                             hover:text-white
                              transition-colors duration-200 group"
                 >
                   {item.label}
                   <span
-                    className="absolute -bottom-px left-0 h-px w-0 bg-neutral-900 dark:bg-white
+                    className="absolute -bottom-px left-0 h-px w-0 bg-white
                                transition-all duration-300 ease-out group-hover:w-full"
                   />
                 </a>
@@ -102,7 +102,7 @@ export function Navbar() {
             ))}
 
             {/* Social icons */}
-            <li className="flex items-center gap-4 pl-2 border-l border-neutral-200/60 dark:border-neutral-700/60">
+            <li className="flex items-center gap-4 pl-2 border-l border-neutral-700/60">
               <motion.a
                 href="https://github.com/mrcsbrln"
                 target="_blank"
@@ -111,7 +111,7 @@ export function Navbar() {
                 initial={{ opacity: 0, y: -6 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.43, duration: 0.45, ease: "easeOut" }}
-                className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200"
+                className="text-neutral-400 hover:text-white transition-colors duration-200"
               >
                 <svg
                   width="18"
@@ -130,7 +130,7 @@ export function Navbar() {
                 initial={{ opacity: 0, y: -6 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.45, ease: "easeOut" }}
-                className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200"
+                className="text-neutral-400 hover:text-white transition-colors duration-200"
               >
                 <svg
                   width="18"
@@ -148,7 +148,7 @@ export function Navbar() {
           <button
             onClick={() => setMenuOpen((o) => !o)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 text-neutral-900 dark:text-white cursor-pointer"
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 text-white cursor-pointer"
           >
             <motion.span
               animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
@@ -178,7 +178,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden relative border-b border-neutral-200/60 dark:border-neutral-800/60"
+            className="md:hidden relative border-b border-neutral-800/60"
           >
             <ul className="flex flex-col mx-auto max-w-360 px-6 py-6 gap-6">
               {navItems.map((item) => (
@@ -187,21 +187,21 @@ export function Navbar() {
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
                     className="block font-mono text-sm tracking-widest uppercase
-                               text-neutral-600 dark:text-neutral-400
-                               hover:text-neutral-900 dark:hover:text-white
+                               text-neutral-400
+                               hover:text-white
                                transition-colors duration-200"
                   >
                     {item.label}
                   </a>
                 </li>
               ))}
-              <li className="flex items-center gap-5 pt-2 border-t border-neutral-200/60 dark:border-neutral-800/60">
+              <li className="flex items-center gap-5 pt-2 border-t border-neutral-800/60">
                 <a
                   href="https://github.com/mrcsbrln"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200"
+                  className="text-neutral-400 hover:text-white transition-colors duration-200"
                 >
                   <svg
                     width="18"
@@ -217,7 +217,7 @@ export function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors duration-200"
+                  className="text-neutral-400 hover:text-white transition-colors duration-200"
                 >
                   <svg
                     width="18"

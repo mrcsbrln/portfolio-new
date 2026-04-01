@@ -7,8 +7,8 @@ export default function PrivacyPage() {
     <main className="flex-1 mx-auto max-w-360 px-6 pt-32 pb-24">
       <a
         href="/"
-        className="inline-flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400
-                   hover:text-neutral-900 dark:hover:text-white transition-colors duration-200 mb-10 group"
+        className="inline-flex items-center gap-2 text-sm text-neutral-400
+                   hover:text-white transition-colors duration-200 mb-10 group"
       >
         <svg
           width="14"
@@ -25,14 +25,12 @@ export default function PrivacyPage() {
         </svg>
         Back
       </a>
-      <h1 className="font-mono text-2xl font-bold tracking-tight text-neutral-900 dark:text-white mb-8">
+      <h1 className="font-mono text-2xl font-bold tracking-tight text-white mb-8">
         Datenschutzerklärung
       </h1>
-      <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-8 max-w-2xl">
+      <div className="text-sm text-neutral-400 space-y-8 max-w-2xl">
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">
-            1. Verantwortlicher
-          </h2>
+          <h2 className="font-medium text-white">1. Verantwortlicher</h2>
           <p>
             Marcus Hartmann
             <br />
@@ -43,7 +41,7 @@ export default function PrivacyPage() {
             E-Mail:{" "}
             <a
               href="mailto:info@marcus-hartmann.net"
-              className="text-neutral-900 dark:text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
+              className="text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
             >
               info@marcus-hartmann.net
             </a>
@@ -51,9 +49,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">
-            2. Hosting
-          </h2>
+          <h2 className="font-medium text-white">2. Hosting</h2>
           <p>
             Diese Website wird gehostet von ALL-INKL.COM – Neue Medien Münnich,
             Hauptstraße 68, 02742 Friedersdorf. Beim Aufruf der Website werden
@@ -68,7 +64,7 @@ export default function PrivacyPage() {
               href="https://all-inkl.com/datenschutzinformationen/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-900 dark:text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
+              className="text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
             >
               all-inkl.com/datenschutzinformationen
             </a>
@@ -77,9 +73,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">
-            3. Kontaktformular
-          </h2>
+          <h2 className="font-medium text-white">3. Kontaktformular</h2>
           <p>
             Wenn du das Kontaktformular nutzt, werden dein Name, deine
             E-Mail-Adresse und deine Nachricht an einen PHP-Mailversand-Dienst
@@ -94,7 +88,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">
+          <h2 className="font-medium text-white">
             4. Chat-Widget & KI-Verarbeitung
           </h2>
           <p>
@@ -114,9 +108,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">
-            5. Cookies & Tracking
-          </h2>
+          <h2 className="font-medium text-white">5. Cookies & Tracking</h2>
           <p>
             Diese Website verwendet keine Cookies und keinerlei Tracking- oder
             Analyse-Tools. Es werden keine Nutzungsprofile erstellt.
@@ -124,9 +116,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">
-            6. Schriftarten
-          </h2>
+          <h2 className="font-medium text-white">6. Schriftarten</h2>
           <p>
             Diese Website verwendet die Schriftart „Geist" von Vercel. Die
             Schriftdateien werden beim Build-Prozess heruntergeladen und auf dem
@@ -136,9 +126,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">
-            7. Externe Links
-          </h2>
+          <h2 className="font-medium text-white">7. Externe Links</h2>
           <p>
             Diese Website enthält Links zu externen Diensten (GitHub, LinkedIn).
             Sobald du diese Links aufrufst, gelten die Datenschutzbestimmungen
@@ -147,9 +135,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-medium text-neutral-900 dark:text-white">
-            8. Deine Rechte
-          </h2>
+          <h2 className="font-medium text-white">8. Deine Rechte</h2>
           <p>
             Du hast nach der DSGVO das Recht auf Auskunft (Art.&nbsp;15),
             Berichtigung (Art.&nbsp;16), Löschung (Art.&nbsp;17), Einschränkung
@@ -158,7 +144,7 @@ export default function PrivacyPage() {
             dich an{" "}
             <a
               href="mailto:info@marcus-hartmann.net"
-              className="text-neutral-900 dark:text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
+              className="text-white underline underline-offset-2 hover:opacity-70 transition-opacity"
             >
               info@marcus-hartmann.net
             </a>

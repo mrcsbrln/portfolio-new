@@ -22,10 +22,10 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <motion.article
       variants={itemVariants}
-      className="group flex flex-col border border-neutral-200 dark:border-neutral-800 overflow-hidden bg-neutral-50 dark:bg-neutral-900"
+      className="group flex flex-col border border-neutral-800 overflow-hidden bg-neutral-900"
     >
       {/* Screenshot */}
-      <div className="relative aspect-video bg-neutral-100 dark:bg-neutral-800/60 overflow-hidden">
+      <div className="relative aspect-video bg-neutral-800/60 overflow-hidden">
         {project.image ? (
           <Image
             src={project.image}
@@ -36,7 +36,7 @@ function ProjectCard({ project }: { project: Project }) {
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="font-mono text-[10px] tracking-widest uppercase text-neutral-400 dark:text-neutral-600">
+            <span className="font-mono text-[10px] tracking-widest uppercase text-neutral-600">
               Screenshot
             </span>
           </div>
@@ -46,10 +46,10 @@ function ProjectCard({ project }: { project: Project }) {
       {/* Content */}
       <div className="flex flex-col flex-1 p-6 gap-4">
         <div className="flex-1 space-y-2">
-          <h3 className="font-bold tracking-tight text-neutral-900 dark:text-white">
+          <h3 className="font-bold tracking-tight text-white">
             {project.name}
           </h3>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
+          <p className="text-sm text-neutral-400 leading-relaxed">
             {project.description}
           </p>
         </div>
@@ -60,8 +60,8 @@ function ProjectCard({ project }: { project: Project }) {
             <span
               key={tag}
               className="font-mono text-[10px] tracking-widest uppercase px-2 py-1
-                         border border-neutral-200 dark:border-neutral-700
-                         text-neutral-500 dark:text-neutral-400"
+                         border border-neutral-700
+                         text-neutral-400"
             >
               {tag}
             </span>
@@ -69,15 +69,15 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {/* Links */}
-        <div className="flex items-center gap-4 pt-2 border-t border-neutral-100 dark:border-neutral-800">
+        <div className="flex items-center gap-4 pt-2 border-t border-neutral-800">
           {project.github && (
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-[10px] tracking-widest uppercase
-                         text-neutral-500 dark:text-neutral-400
-                         hover:text-neutral-900 dark:hover:text-white
+                         text-neutral-400
+                         hover:text-white
                          transition-colors duration-200 flex items-center gap-1.5"
             >
               GitHub ↗
@@ -88,8 +88,8 @@ function ProjectCard({ project }: { project: Project }) {
             target="_blank"
             rel="noopener noreferrer"
             className="font-mono text-[10px] tracking-widest uppercase
-                       text-neutral-500 dark:text-neutral-400
-                       hover:text-neutral-900 dark:hover:text-white
+                       text-neutral-400
+                       hover:text-white
                        transition-colors duration-200 flex items-center gap-1.5"
           >
             Live ↗
@@ -104,7 +104,7 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="w-full min-h-dvh bg-white dark:bg-neutral-950 py-20 md:py-28 flex flex-col justify-center"
+      className="w-full min-h-dvh bg-neutral-950 py-20 md:py-28 flex flex-col justify-center"
     >
       <div className="w-full max-w-360 mx-auto px-6">
         {/* Section label */}
@@ -123,7 +123,7 @@ export function ProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl md:text-5xl font-bold tracking-tighter text-neutral-900 dark:text-white mb-12"
+          className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-12"
         >
           Selected work
         </motion.h2>

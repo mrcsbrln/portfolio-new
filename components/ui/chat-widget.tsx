@@ -228,7 +228,7 @@ export function ChatWidget() {
                 }
                 disabled={isLoading}
                 placeholder="Frage stellen..."
-                className="flex-1 bg-[#1d1d1d] border border-[#262626] rounded-lg px-3 py-1.5 text-xs text-[#ccc] placeholder-[#555] outline-none disabled:opacity-50"
+                className="flex-1 bg-[#1d1d1d] border border-[#262626] rounded-lg px-3 py-1.5 text-[16px] sm:text-xs text-[#ccc] placeholder-[#555] outline-none disabled:opacity-50"
               />
               <button
                 onClick={() => handleSend()}

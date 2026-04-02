@@ -10,10 +10,10 @@ import {
 import { useEffect, useRef, useState } from "react";
 
 const navItems = [
-  { label: "About me", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "About me", href: "/#about" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {

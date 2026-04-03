@@ -26,7 +26,32 @@ export function ChatWidget() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [bottomOffset, setBottomOffset] = useState(16);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const manuallyClosed = useRef(false);
+
+  // Keep widget above the footer when it becomes visible
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+
+    const update = () => {
+      const base = window.innerWidth >= 640 ? 24 : 16;
+      const footerVisible = Math.max(
+        0,
+        window.innerHeight - footer.getBoundingClientRect().top,
+      );
+      setBottomOffset(base + footerVisible);
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
 
   // On desktop (≥768px): open once the hero section has scrolled out of view
   useEffect(() => {
@@ -37,7 +62,7 @@ export function ChatWidget() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) setIsOpen(true);
+        if (!entry.isIntersecting && !manuallyClosed.current) setIsOpen(true);
       },
       { threshold: 0 },
     );
@@ -102,7 +127,10 @@ export function ChatWidget() {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3">
+    <div
+      className="fixed right-4 sm:right-6 z-50 flex flex-col items-end gap-3"
+      style={{ bottom: `${bottomOffset}px` }}
+    >
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -122,7 +150,10 @@ export function ChatWidget() {
                 <p className="text-[10px] text-[#666] mt-0.5">● Bereit</p>
               </div>
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  manuallyClosed.current = true;
+                  setIsOpen(false);
+                }}
                 aria-label="Chat schließen"
                 className="w-6 h-6 flex items-center justify-center rounded border border-[#2a2a2a] text-[#666] hover:text-[#aaa] transition-colors text-xs"
               >

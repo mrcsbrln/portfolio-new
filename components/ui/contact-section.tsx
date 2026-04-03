@@ -105,7 +105,7 @@ export function ContactSection() {
             className="flex flex-col"
           >
             <h2 className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-6 leading-tight">
-              Let's work together
+              Let's<br></br> connect
             </h2>
             <p className="text-4xl font-medium text-neutral-400 mb-4">
               Got a problem to solve?
@@ -115,7 +115,7 @@ export function ContactSection() {
               knowing your ideas and contributing to your projects with my work.
             </p>
             <p className="text-md text-neutral-400">
-              Need a Frontend developer?{" "}
+              Questions about my work or just want to say hi?{" "}
               <a
                 href="mailto:info@marcus-hartmann.net"
                 className="text-white underline underline-offset-4 hover:text-neutral-300 transition-colors duration-200"

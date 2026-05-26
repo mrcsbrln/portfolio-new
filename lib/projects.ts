@@ -9,6 +9,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Join",
+    description:
+      "Kanban-based issue tracker with email-to-ticket automation. Send an email and n8n with Mistral AI automatically creates a ticket on the board.",
+    tags: ["Next.js", "TypeScript", "Supabase", "n8n", "Mistral AI"],
+    github: "https://github.com/mrcsbrln/join-issue-collector",
+    live: "https://join-issue-collector.vercel.app/",
+    image: "/images/projects/join.png",
+  },
+  {
     name: "E-Commerce",
     description:
       "Fullstack E-commerce application built with NextJS, Typescript and Prisma ORM.",
@@ -34,15 +43,6 @@ export const projects: Project[] = [
     github: "https://github.com/DanieleDona1/DABubble",
     live: "https://dabubble.marcus-hartmann.net/",
     image: "/images/projects/da-bubble.png",
-  },
-  {
-    name: "Join",
-    description:
-      "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-    tags: ["JavaScript", "HTML", "CSS", "Firebase"],
-    github: "https://github.com/KevinPerret/Join",
-    live: "https://join.marcus-hartmann.net/",
-    image: "/images/projects/join.png",
   },
   {
     name: "El Pollo Loco",

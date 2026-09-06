@@ -14,8 +14,17 @@ export const projects: Project[] = [
       "Kanban-based issue tracker with email-to-ticket automation. Send an email and n8n with Mistral AI automatically creates a ticket on the board.",
     tags: ["Next.js", "TypeScript", "Supabase", "n8n", "Mistral AI"],
     github: "https://github.com/mrcsbrln/join-issue-collector",
-    live: "https://join-issue-collector.vercel.app/",
+    live: "https://join.marcus-hartmann.net/",
     image: "/images/projects/join.png",
+  },
+  {
+    name: "Printforge",
+    description:
+      "A mock web platform designed for browsing, filtering, and sharing 3D printing STL models based on NextJS, Tailwind and better-sqlite3.",
+    tags: ["Next.js", "TypeScript", "better-sqlite3", "Tailwind"],
+    github: "https://github.com/mrcsbrln/printforge",
+    live: "https://printforge.marcus-hartmann.net/",
+    image: "/images/projects/printforge.png",
   },
   {
     name: "E-Commerce",
@@ -23,7 +32,7 @@ export const projects: Project[] = [
       "Fullstack E-commerce application built with NextJS, Typescript and Prisma ORM.",
     tags: ["Next.js", "TypeScript", "Prisma"],
     github: "https://github.com/mrcsbrln/next-ecommerce",
-    live: "https://next-ecommerce-three-weld.vercel.app/",
+    live: "https://next-ecommerce.marcus-hartmann.net/",
     image: "/images/projects/ecommerce.png",
   },
   {
@@ -32,7 +41,7 @@ export const projects: Project[] = [
       "A cryptocurrency dashboard built with NextJS, Typescript, Tradingview, Shadcn UI and coingecko demo API.",
     tags: ["Next.js", "TypeScript"],
     github: "https://github.com/mrcsbrln/coinpulse",
-    live: "https://coinpulse-lime.vercel.app/",
+    live: "https://coinpulse.marcus-hartmann.net/",
     image: "/images/projects/coinpulse.png",
   },
   {

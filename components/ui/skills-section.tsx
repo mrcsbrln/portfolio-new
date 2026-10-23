@@ -30,7 +30,7 @@ const skills: Skill[] = [
   { name: "Angular", Icon: IconAngular },
   { name: "HTML", Icon: IconHTML },
   { name: "CSS", Icon: IconCSS },
-  { name: "Firebase", Icon: IconFirebase },
+  { name: "Supabase", Icon: IconSupabase },
   { name: "Git", Icon: IconGit },
   { name: "REST API", Icon: IconRestAPI },
   { name: "Claude Code", Icon: IconClaudeCode },
@@ -126,7 +126,7 @@ export function SkillsSection() {
                     applications using Next.js (React) and Angular.
                   </p>
                   <p>
-                    Performance & SEO: I don't just build interfaces; I optimize
+                    Performance & SEO: I don&apos;t just build interfaces; I optimize
                     them. My solid understanding of SEO best practices ensures
                     that performance and discoverability are baked into the code
                     from day one.
@@ -142,8 +142,8 @@ export function SkillsSection() {
                 <div className="space-y-1.5 text-base text-neutral-400 leading-normal">
                   <p>
                     I believe in staying ahead of the curve by integrating the
-                    latest AI developments into my development cycle. I'm not
-                    just watching the AI space—I'm actively using it to build
+                    latest AI developments into my development cycle. I&apos;m not
+                    just watching the AI space—I&apos;m actively using it to build
                     better software, faster.
                   </p>
                   <p>

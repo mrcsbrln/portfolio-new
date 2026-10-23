@@ -66,26 +66,33 @@ export function AboutSection() {
 
             <div className="flex flex-col gap-4 text-neutral-400 text-base leading-relaxed">
               <p>
-                Pharmacist turned Developer. I started by automating healthcare
-                workflows and stayed for the logic of clean code. Now, I focus
-                on building responsive, SEO-friendly interfaces that solve
-                real-world problems. Currently bridging the gap between Frontend
-                precision and Full-Stack ambitions.
+                Pharmacist turned developer. Working in oncology, I kept running
+                into the limits of digitalization in healthcare: for
+                data-protection reasons, a lot still ran on fax machines,
+                printouts and binders. I started building my first small apps
+                with Microsoft Power Apps to move those processes into the
+                digital world — and found out how much I enjoy writing software.
+                So I trained as a frontend developer.
               </p>
               <p>
-                <span className="text-white font-medium">What I do:</span> I
-                translate complex mockups into pixel-perfect, logical code with
-                a focus on performance and accessibility.
+                <span className="text-white font-medium">What I do: </span>Today
+                I work exclusively on digital and tech topics: websites, a
+                headless CMS migration with Sanity and Next.js, AI integrations
+                and n8n automations, and small custom tools that take real work
+                off people&apos;s plates.
               </p>
               <p>
-                <span className="text-white font-medium">My goal:</span> To
-                evolve from a frontend specialist into a versatile Full-Stack
-                Developer, building end-to-end digital solutions.
+                <span className="text-white font-medium">How I work:</span>{" "}
+                Close to the people who use what I build — clarifying
+                requirements directly and improving step by step, from the first
+                idea to deployment. Claude Code is my daily pair programmer;
+                architecture and code quality stay my call.
               </p>
               <p>
-                <span className="text-white font-medium">The X-Factor:</span> I
-                combine the analytical mindset of a Pharmacist with modern dev
-                tools to create reliable, high-stakes-ready software.
+                <span className="text-white font-medium">The X-Factor: </span>I
+                speak both languages — the domain side and the tech side.
+                Combined with a pharmacist&apos;s analytical, careful mindset,
+                that turns everyday friction into reliable software.
               </p>
             </div>
 

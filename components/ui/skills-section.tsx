@@ -117,19 +117,18 @@ export function SkillsSection() {
                   Core Stack & Frameworks
                 </p>
                 <div className="space-y-1.5 text-base text-neutral-400 leading-normal">
+                  <p>Core: TypeScript, JavaScript (ES6+), HTML and CSS.</p>
                   <p>
-                    Frontend Mastery: Deep expertise in TypeScript and
-                    JavaScript (ES6+).
+                    Frameworks: Building applications with Next.js (React) and
+                    Angular.
                   </p>
                   <p>
-                    Frameworks: Extensive experience building production-ready
-                    applications using Next.js (React) and Angular.
+                    Backend & CMS: Supabase (often self-hosted), REST APIs and
+                    Sanity as a headless CMS.
                   </p>
                   <p>
-                    Performance & SEO: I don&apos;t just build interfaces; I optimize
-                    them. My solid understanding of SEO best practices ensures
-                    that performance and discoverability are baked into the code
-                    from day one.
+                    Performance & SEO: Performance and discoverability are part
+                    of the code from day one, not an afterthought.
                   </p>
                 </div>
               </div>
@@ -141,14 +140,11 @@ export function SkillsSection() {
                 </p>
                 <div className="space-y-1.5 text-base text-neutral-400 leading-normal">
                   <p>
-                    I believe in staying ahead of the curve by integrating the
-                    latest AI developments into my development cycle. I&apos;m not
-                    just watching the AI space—I&apos;m actively using it to build
-                    better software, faster.
+                    I use AI where it actually helps — not for its own sake.
                   </p>
                   <p>
-                    AI-Driven Development: Proficient in using tools like Claude
-                    Code to accelerate coding and refactoring.
+                    AI-Driven Development: Claude Code as my daily pair
+                    programmer for building and refactoring.
                   </p>
                   <p>
                     Workflow Automation: Experience with n8n to build custom
@@ -156,9 +152,9 @@ export function SkillsSection() {
                     services.
                   </p>
                   <p>
-                    Continuous Learning: I keep a sharp eye on the rapidly
-                    evolving AI landscape to implement the most efficient tools
-                    and LLM integrations in my projects.
+                    Continuous Learning: I follow the fast-moving AI landscape
+                    and bring useful tools and LLM integrations into my
+                    projects.
                   </p>
                 </div>
               </div>

@@ -9,7 +9,7 @@ import {
   IconAngular,
   IconHTML,
   IconCSS,
-  IconFirebase,
+  IconSupabase,
   IconGit,
   IconRestAPI,
   IconClaudeCode,

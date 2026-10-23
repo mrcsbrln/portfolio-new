@@ -11,9 +11,9 @@ const GREETING =
 
 const SUGGESTIONS = [
   "🛠️ Was ist Marcus' Tech Stack?",
-  "🚀 An welchen Projekten hat Marcus gearbeitet?",
+  "💊 Wie kam Marcus vom Apotheker zur Entwicklung?",
+  "🚀 Welche Projekte hat Marcus gebaut?",
   "💼 Woran arbeitet Marcus gerade?",
-  "🏄 Was macht Marcus in seiner Freizeit?",
 ];
 
 const ERROR_MSG =

@@ -29,6 +29,7 @@ export function ChatWidget() {
   const [bottomOffset, setBottomOffset] = useState(16);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const manuallyClosed = useRef(false);
+  const sessionId = useRef<string | null>(null);
 
   // Keep widget above the footer when it becomes visible
   useEffect(() => {
@@ -97,11 +98,17 @@ export function ChatWidget() {
       return;
     }
 
+    // n8n's Simple Memory node needs a session key to keep conversation context
+    sessionId.current ??= crypto.randomUUID();
+
     try {
       const res = await fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userText }),
+        body: JSON.stringify({
+          message: userText,
+          sessionId: sessionId.current,
+        }),
       });
 
       if (!res.ok) throw new Error("non-2xx");

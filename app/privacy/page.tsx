@@ -100,9 +100,13 @@ export default function PrivacyPage() {
             KI-Sprachmodell Mistral (Mistral AI, Frankreich). Es werden keine
             Nachrichten dauerhaft gespeichert; der Gesprächsverlauf wird
             ausschließlich für die Dauer der Sitzung im Arbeitsspeicher
-            vorgehalten und anschließend verworfen. Rechtsgrundlage ist
-            Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse an
-            der Beantwortung von Anfragen). Die Nutzung des Chat-Widgets ist
+            vorgehalten und anschließend verworfen. Zum Schutz vor Missbrauch
+            wird deine IP-Adresse in pseudonymisierter Form (gesalzener
+            SHA-256-Hash) zusammen mit einem Nachrichtenzähler gespeichert und
+            spätestens nach zwei Stunden automatisch gelöscht; die IP-Adresse
+            selbst wird nicht gespeichert. Rechtsgrundlage ist Art.&nbsp;6
+            Abs.&nbsp;1 lit.&nbsp;f DSGVO (berechtigtes Interesse an der
+            Beantwortung von Anfragen). Die Nutzung des Chat-Widgets ist
             freiwillig.
           </p>
         </section>

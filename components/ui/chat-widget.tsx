@@ -10,9 +10,9 @@ const GREETING =
   "Hallo! Ich beantworte gerne Fragen über Marcus. Womit kann ich helfen?";
 
 const SUGGESTIONS = [
-  "💼 Was ist Marcus' Tech Stack?",
+  "🛠️ Was ist Marcus' Tech Stack?",
   "🚀 An welchen Projekten hat Marcus gearbeitet?",
-  "💼 Was arbeitet Marcus zur Zeit?",
+  "💼 Woran arbeitet Marcus gerade?",
   "🏄 Was macht Marcus in seiner Freizeit?",
 ];
 
@@ -111,16 +111,17 @@ export function ChatWidget() {
         }),
       });
 
-      if (!res.ok) throw new Error("non-2xx");
-
+      // The workflow answers invalid input (400), rate limits (429) and
+      // model outages (503) with a user-facing text; anything else is generic
       const reply = await res.text();
+      const isWorkflowReply = res.ok || [400, 429, 503].includes(res.status);
 
       setMessages((prev) => [
         ...prev,
         {
           id: crypto.randomUUID(),
           role: "assistant",
-          content: reply.trim() || ERROR_MSG,
+          content: (isWorkflowReply && reply.trim()) || ERROR_MSG,
         },
       ]);
     } catch {
@@ -208,6 +209,16 @@ export function ChatWidget() {
                             {children}
                           </li>
                         ),
+                        a: ({ href, children }) => (
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#ccc] underline underline-offset-2 decoration-[#555] hover:decoration-[#ccc] transition-colors"
+                          >
+                            {children}
+                          </a>
+                        ),
                       }}
                     >
                       {msg.content}
@@ -265,6 +276,7 @@ export function ChatWidget() {
                   e.key === "Enter" && !e.shiftKey && handleSend()
                 }
                 disabled={isLoading}
+                maxLength={500}
                 placeholder="Frage stellen..."
                 className="flex-1 bg-[#1d1d1d] border border-[#262626] rounded-lg px-3 py-1.5 text-[16px] sm:text-xs text-[#ccc] placeholder-[#555] outline-none disabled:opacity-50"
               />

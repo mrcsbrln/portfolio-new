@@ -19,7 +19,7 @@ export function AboutSection() {
         </motion.p>
 
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Photo */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -51,7 +51,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-6"
+            className="flex max-w-xl flex-col gap-6 lg:max-w-none"
           >
             <div>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-2">

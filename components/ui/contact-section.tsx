@@ -79,10 +79,7 @@ export function ContactSection() {
   }
 
   return (
-    <section
-      id="contact"
-      className="w-full min-h-dvh bg-neutral-900 py-20 md:py-28"
-    >
+    <section id="contact" className="w-full bg-neutral-900 py-28 md:py-36">
       <div className="w-full max-w-360 mx-auto px-6">
         {/* Section label */}
         <motion.p
@@ -176,7 +173,7 @@ export function ContactSection() {
                     ${touched.email && errors.email && !email ? "placeholder:text-red-400" : "placeholder:text-neutral-600"}`}
                 />
               </div>
-              <p className="font-mono text-[10px] tracking-widest uppercase text-red-400 h-6 flex items-center">
+              <p className="font-mono text-[0.625rem] tracking-widest uppercase text-red-400 h-6 flex items-center">
                 {touched.email && errors.email && email && !emailFocused
                   ? errors.email
                   : ""}
@@ -205,7 +202,7 @@ export function ContactSection() {
                     ${touched.message && errors.message && !message ? "placeholder:text-red-400" : "placeholder:text-neutral-600"}`}
                 />
               </div>
-              <p className="font-mono text-[10px] tracking-widest uppercase text-red-400 h-6 flex items-center">
+              <p className="font-mono text-[0.625rem] tracking-widest uppercase text-red-400 h-6 flex items-center">
                 {touched.message && errors.message && message && !messageFocused
                   ? errors.message
                   : ""}
@@ -271,7 +268,7 @@ export function ContactSection() {
                   >
                     {status === "loading" ? "Sending..." : "Say hello :)"}
                   </button>
-                  <p className="font-mono text-[10px] tracking-widest uppercase h-4 flex items-center">
+                  <p className="font-mono text-[0.625rem] tracking-widest uppercase h-4 flex items-center">
                     {status === "success" && (
                       <span className="text-green-400">
                         Message sent successfully.

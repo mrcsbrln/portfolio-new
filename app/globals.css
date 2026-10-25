@@ -43,6 +43,9 @@ body {
 
 html {
   scroll-behavior: smooth;
+  /* 16px up to a 1920px viewport, then grows with it (max 24px) so the
+     rem-based layout scales on large screens */
+  font-size: clamp(1rem, 100vw / 120, 1.5rem);
 }
 
 @keyframes cursor-blink {

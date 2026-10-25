@@ -71,7 +71,7 @@ function SkillCard({ skill }: { skill: Skill }) {
           className="w-full h-full brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-200"
         />
       </div>
-      <span className="font-mono text-[9px] tracking-widest uppercase text-center text-white/30 group-hover:text-white/70 transition-colors duration-200">
+      <span className="font-mono text-[0.5625rem] tracking-widest uppercase text-center text-white/30 group-hover:text-white/70 transition-colors duration-200">
         {skill.name}
       </span>
     </motion.div>
@@ -80,10 +80,7 @@ function SkillCard({ skill }: { skill: Skill }) {
 
 export function SkillsSection() {
   return (
-    <section
-      id="skills"
-      className="w-full min-h-dvh bg-neutral-900 py-14 md:py-16 flex flex-col justify-center"
-    >
+    <section id="skills" className="w-full bg-neutral-900 py-28 md:py-36">
       <div className="w-full max-w-360 mx-auto px-6">
         {/* Section label */}
         <motion.p

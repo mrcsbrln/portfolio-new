@@ -67,7 +67,7 @@ export const projects: Project[] = [
     tags: ["Angular", "TypeScript", "Firebase"],
     github: "https://github.com/DanieleDona1/DABubble",
     live: "https://dabubble.marcus-hartmann.net/",
-    image: "/images/projects/da-bubble.png",
+    image: "/images/projects/da-bubble.webp",
   },
   {
     name: "El Pollo Loco",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     tags: ["JavaScript", "HTML", "CSS"],
     github: "https://github.com/mrcsbrln/el_pollo_loco",
     live: "https://elpolloloco.marcus-hartmann.net/",
-    image: "/images/projects/el-pollo-loco.png",
+    image: "/images/projects/el-pollo-loco.webp",
   },
   {
     name: "NgMovie",

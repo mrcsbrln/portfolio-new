@@ -1,8 +1,42 @@
 "use client";
 
+import type { ComponentType, SVGProps } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { projects, type Project } from "@/lib/projects";
+import { projects, type Project, type Tech } from "@/lib/projects";
+import {
+  IconAngular,
+  IconCSS,
+  IconFirebase,
+  IconHTML,
+  IconJavaScript,
+  IconMistral,
+  IconN8n,
+  IconNextjs,
+  IconPrisma,
+  IconRestAPI,
+  IconSQLite,
+  IconSupabase,
+  IconTailwind,
+  IconTypeScript,
+} from "@/components/ui/skill-icons";
+
+const techIcons: Record<Tech, ComponentType<SVGProps<SVGSVGElement>>> = {
+  "Next.js": IconNextjs,
+  TypeScript: IconTypeScript,
+  Supabase: IconSupabase,
+  n8n: IconN8n,
+  "Mistral AI": IconMistral,
+  SQLite: IconSQLite,
+  Tailwind: IconTailwind,
+  Prisma: IconPrisma,
+  Angular: IconAngular,
+  Firebase: IconFirebase,
+  JavaScript: IconJavaScript,
+  HTML: IconHTML,
+  CSS: IconCSS,
+  "REST API": IconRestAPI,
+};
 
 const containerVariants = {
   hidden: {},
@@ -54,19 +88,24 @@ function ProjectCard({ project }: { project: Project }) {
           </p>
         </div>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="font-mono text-[10px] tracking-widest uppercase px-2 py-1
-                         border border-neutral-700
-                         text-neutral-400"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        {/* Tech stack */}
+        <ul
+          className="flex flex-wrap items-center gap-3"
+          aria-label="Tech stack"
+        >
+          {project.tags.map((tech) => {
+            const Icon = techIcons[tech];
+            return (
+              <li key={tech} title={tech}>
+                <Icon
+                  aria-hidden
+                  className="h-5 w-5 brightness-0 invert opacity-60 transition-opacity duration-200 group-hover:opacity-100"
+                />
+                <span className="sr-only">{tech}</span>
+              </li>
+            );
+          })}
+        </ul>
 
         {/* Links */}
         <div className="flex items-center gap-4 pt-2 border-t border-neutral-800">

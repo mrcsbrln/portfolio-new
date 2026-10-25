@@ -1,7 +1,23 @@
+export type Tech =
+  | "Next.js"
+  | "TypeScript"
+  | "Supabase"
+  | "n8n"
+  | "Mistral AI"
+  | "SQLite"
+  | "Tailwind"
+  | "Prisma"
+  | "Angular"
+  | "Firebase"
+  | "JavaScript"
+  | "HTML"
+  | "CSS"
+  | "REST API";
+
 export type Project = {
   name: string;
   description: string;
-  tags: string[];
+  tags: Tech[];
   github: string;
   live: string;
   image: string;
@@ -21,7 +37,7 @@ export const projects: Project[] = [
     name: "Printforge",
     description:
       "A mock web platform designed for browsing, filtering, and sharing 3D printing STL models based on NextJS, Tailwind and better-sqlite3.",
-    tags: ["Next.js", "TypeScript", "better-sqlite3", "Tailwind"],
+    tags: ["Next.js", "TypeScript", "SQLite", "Tailwind"],
     github: "https://github.com/mrcsbrln/printforge",
     live: "https://printforge.marcus-hartmann.net/",
     image: "/images/projects/printforge.png",

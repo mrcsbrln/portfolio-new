@@ -1,9 +1,9 @@
 "use client";
 
 import type { ComponentType, SVGProps } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { projects, type Project, type Tech } from "@/lib/projects";
+import { LayoutGrid, type LayoutGridCard } from "@/components/ui/layout-grid";
 import {
   IconAngular,
   IconCSS,
@@ -38,113 +38,88 @@ const techIcons: Record<Tech, ComponentType<SVGProps<SVGSVGElement>>> = {
   "REST API": IconRestAPI,
 };
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
-};
+// Bento layout for 3 columns: 2+1 / 1+1+1 / 1+2
+const tileSpans = ["md:col-span-2", "", "", "", "", "", "lg:col-span-2"];
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
-  },
-};
+const linkClassName =
+  "font-mono text-[0.625rem] tracking-widest uppercase text-neutral-300 hover:text-white transition-colors duration-200";
 
-function ProjectCard({ project }: { project: Project }) {
+function TechStack({ tags }: { tags: Tech[] }) {
   return (
-    <motion.article
-      variants={itemVariants}
-      className="group flex flex-col border border-neutral-800 overflow-hidden bg-neutral-900"
-    >
-      {/* Screenshot */}
-      <div className="relative aspect-video bg-neutral-800/60 overflow-hidden">
-        {project.image ? (
-          <Image
-            src={project.image}
-            alt={project.name}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="font-mono text-[10px] tracking-widest uppercase text-neutral-600">
-              Screenshot
-            </span>
-          </div>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="flex flex-col flex-1 p-6 gap-4">
-        <div className="flex-1 space-y-2">
-          <h3 className="font-bold tracking-tight text-white">
-            {project.name}
-          </h3>
-          <p className="text-sm text-neutral-400 leading-relaxed">
-            {project.description}
-          </p>
-        </div>
-
-        {/* Tech stack */}
-        <ul
-          className="flex flex-wrap items-center gap-3"
-          aria-label="Tech stack"
-        >
-          {project.tags.map((tech) => {
-            const Icon = techIcons[tech];
-            return (
-              <li key={tech} title={tech}>
-                <Icon
-                  aria-hidden
-                  className="h-5 w-5 brightness-0 invert opacity-60 transition-opacity duration-200 group-hover:opacity-100"
-                />
-                <span className="sr-only">{tech}</span>
-              </li>
-            );
-          })}
-        </ul>
-
-        {/* Links */}
-        <div className="flex items-center gap-4 pt-2 border-t border-neutral-800">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-[10px] tracking-widest uppercase
-                         text-neutral-400
-                         hover:text-white
-                         transition-colors duration-200 flex items-center gap-1.5"
-            >
-              GitHub ↗
-            </a>
-          )}
-          <a
-            href={project.live || "#"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-[10px] tracking-widest uppercase
-                       text-neutral-400
-                       hover:text-white
-                       transition-colors duration-200 flex items-center gap-1.5"
-          >
-            Live ↗
-          </a>
-        </div>
-      </div>
-    </motion.article>
+    <ul className="flex flex-wrap items-center gap-3" aria-label="Tech stack">
+      {tags.map((tech) => {
+        const Icon = techIcons[tech];
+        return (
+          <li key={tech} title={tech}>
+            <Icon
+              aria-hidden
+              className="h-5 w-5 brightness-0 invert opacity-70 transition-opacity duration-200 group-hover:opacity-100"
+            />
+            <span className="sr-only">{tech}</span>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
+function ProjectPreview({ project }: { project: Project }) {
+  return (
+    <div className="flex items-center justify-between gap-4 px-5 py-4">
+      <h3 className="font-bold tracking-tight text-white">{project.name}</h3>
+      <TechStack tags={project.tags} />
+    </div>
+  );
+}
+
+function ProjectDetails({ project }: { project: Project }) {
+  return (
+    <div className="max-w-xl space-y-4">
+      <h3 className="text-2xl md:text-3xl font-bold tracking-tighter text-white">
+        {project.name}
+      </h3>
+      <p className="text-sm md:text-base text-neutral-300 leading-relaxed">
+        {project.description}
+      </p>
+      <TechStack tags={project.tags} />
+      <div className="flex items-center gap-6 pt-3 border-t border-neutral-800">
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClassName}
+          >
+            GitHub ↗
+          </a>
+        )}
+        {project.live && (
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClassName}
+          >
+            Live ↗
+          </a>
+        )}
+      </div>
+    </div>
+  );
+}
+
+const cards: LayoutGridCard[] = projects.map((project, i) => ({
+  id: i,
+  title: project.name,
+  className: tileSpans[i] ?? "",
+  thumbnail: project.image,
+  preview: <ProjectPreview project={project} />,
+  content: <ProjectDetails project={project} />,
+}));
+
 export function ProjectsSection() {
   return (
-    <section
-      id="projects"
-      className="w-full min-h-dvh bg-neutral-950 py-20 md:py-28 flex flex-col justify-center"
-    >
+    <section id="projects" className="w-full bg-neutral-950 py-28 md:py-36">
       <div className="w-full max-w-360 mx-auto px-6">
         {/* Section label */}
         <motion.p
@@ -168,15 +143,12 @@ export function ProjectsSection() {
         </motion.h2>
 
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-60px" }}
-          variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
-          ))}
+          <LayoutGrid cards={cards} />
         </motion.div>
       </div>
     </section>

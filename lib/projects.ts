@@ -31,7 +31,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Supabase", "n8n", "Mistral AI"],
     github: "https://github.com/mrcsbrln/join-issue-collector",
     live: "https://join.marcus-hartmann.net/",
-    image: "/images/projects/join.png",
+    image: "/images/projects/join.webp",
   },
   {
     name: "Printforge",

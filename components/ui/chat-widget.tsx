@@ -163,7 +163,7 @@ export function ChatWidget() {
                   setIsOpen(false);
                 }}
                 aria-label="Chat schließen"
-                className="w-6 h-6 flex items-center justify-center rounded border border-[#2a2a2a] text-[#666] hover:text-[#aaa] transition-colors text-xs"
+                className="w-6 h-6 flex items-center justify-center rounded border border-[#2a2a2a] text-[#666] hover:text-[#aaa] transition-colors text-xs cursor-pointer"
               >
                 ✕
               </button>
@@ -255,7 +255,7 @@ export function ChatWidget() {
                       key={s}
                       onClick={() => handleSend(s)}
                       disabled={isLoading}
-                      className="text-left border border-[#262626] rounded-lg px-3 py-2 text-xs text-[#888] bg-[#181818] hover:border-[#444] hover:text-[#bbb] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                      className="text-left border border-[#262626] rounded-lg px-3 py-2 text-xs text-[#888] bg-[#181818] hover:border-[#444] hover:text-[#bbb] transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                       {s}
                     </button>
@@ -283,7 +283,7 @@ export function ChatWidget() {
               <button
                 onClick={() => handleSend()}
                 disabled={isLoading || input.trim().length === 0}
-                className="w-7 h-7 flex items-center justify-center bg-[#fafafa] rounded-lg text-[#0a0a0a] font-bold text-sm disabled:opacity-40 transition-opacity"
+                className="w-7 h-7 flex items-center justify-center bg-[#fafafa] rounded-lg text-[#0a0a0a] font-bold text-sm cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed transition-opacity"
               >
                 →
               </button>
@@ -295,7 +295,7 @@ export function ChatWidget() {
       {/* FAB button */}
       <button
         onClick={() => setIsOpen((v) => !v)}
-        className="w-12 h-12 rounded-full bg-[#fafafa] text-[#0a0a0a] flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-transform"
+        className="w-12 h-12 rounded-full bg-[#fafafa] text-[#0a0a0a] flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-transform cursor-pointer"
         aria-label="Chat öffnen"
       >
         <svg

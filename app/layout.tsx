@@ -64,6 +64,7 @@ export default function RootLayout({
             src={`${umamiUrl}/script.js`}
             data-website-id={umamiWebsiteId}
             data-domains="marcus-hartmann.net"
+            data-do-not-track="true"
             strategy="afterInteractive"
           />
         )}

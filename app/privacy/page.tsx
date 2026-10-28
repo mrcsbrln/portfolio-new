@@ -131,7 +131,16 @@ export default function PrivacyPage() {
             zulässt. Die Daten werden nicht an Dritte weitergegeben.
             Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
             (berechtigtes Interesse an der Analyse der Reichweite meiner
-            Website).
+            Website). Die erfassten Daten werden nach spätestens zwei Jahren
+            gelöscht.
+          </p>
+          <p>
+            Es werden keine Informationen auf deinem Endgerät gespeichert. Das
+            Tracking-Script prüft lediglich, ob du die Messung deaktiviert hast.
+            Du kannst der Reichweitenmessung jederzeit widersprechen, indem du
+            in deinem Browser die Einstellung „Do Not Track“ aktivierst – dann
+            werden deine Besuche nicht erfasst. Alternativ verhindern gängige
+            Content-Blocker das Laden des Scripts.
           </p>
         </section>
 

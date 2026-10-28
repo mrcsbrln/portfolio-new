@@ -1,4 +1,4 @@
-import { BackgroundPaths } from "@/components/ui/background-paths";
+import { ParticleHero } from "@/components/ui/particle-hero";
 import { AboutSection } from "@/components/ui/about-section";
 import { SkillsSection } from "@/components/ui/skills-section";
 import { ProjectsSection } from "@/components/ui/projects-section";
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <div id="hero">
-        <BackgroundPaths title="Marcus Hartmann" />
+        <ParticleHero title="Marcus Hartmann" shockwave />
       </div>
       <AboutSection />
       <SkillsSection />

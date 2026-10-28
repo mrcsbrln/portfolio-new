@@ -56,10 +56,13 @@ export default function PrivacyPage() {
             durch den Hoster automatisch Server-Logfiles erfasst (z.&nbsp;B.
             IP-Adresse, Browsertyp, aufgerufene Seite, Datum und Uhrzeit). Diese
             Daten sind technisch notwendig zur Bereitstellung der Website und
-            werden nicht mit anderen Datenquellen zusammengeführt.
-            Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
-            (berechtigtes Interesse am stabilen Betrieb der Website). Die
-            Datenschutzerklärung von ALL-INKL.COM findest du unter{" "}
+            werden nicht mit anderen Datenquellen zusammengeführt. Die
+            IP-Adresse wird dabei gekürzt gespeichert (die letzten beiden Blöcke
+            werden entfernt), die Logfiles werden nach 7&nbsp;Tagen gelöscht.
+            Aus den gekürzten Logfiles erstellt der Hoster anonyme
+            Zugriffsstatistiken. Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1
+            lit.&nbsp;f DSGVO (berechtigtes Interesse am stabilen Betrieb der
+            Website). Die Datenschutzerklärung von ALL-INKL.COM findest du unter{" "}
             <a
               href="https://all-inkl.com/datenschutzinformationen/"
               target="_blank"
@@ -114,8 +117,21 @@ export default function PrivacyPage() {
         <section className="space-y-2">
           <h2 className="font-medium text-white">5. Cookies & Tracking</h2>
           <p>
-            Diese Website verwendet keine Cookies und keinerlei Tracking- oder
-            Analyse-Tools. Es werden keine Nutzungsprofile erstellt.
+            Diese Website verwendet keine Cookies und es werden keine
+            Nutzungsprofile erstellt.
+          </p>
+          <p>
+            Zur anonymen Reichweitenmessung nutze ich das Open-Source-Tool
+            Umami, das ich selbst auf einem Server bei der Hetzner Online GmbH
+            in Deutschland betreibe. Umami setzt keine Cookies und speichert
+            keine IP-Adressen. Erfasst werden nur aggregierte Daten wie
+            aufgerufene Seite, Referrer, Browser, Betriebssystem, Gerätetyp und
+            Land. Zur Zählung eindeutiger Besuche wird ein täglich wechselnder,
+            gesalzener Hash gebildet, der keinen Rückschluss auf deine Person
+            zulässt. Die Daten werden nicht an Dritte weitergegeben.
+            Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
+            (berechtigtes Interesse an der Analyse der Reichweite meiner
+            Website).
           </p>
         </section>
 
@@ -124,8 +140,8 @@ export default function PrivacyPage() {
           <p>
             Diese Website verwendet die Schriftart „Geist" von Vercel. Die
             Schriftdateien werden beim Build-Prozess heruntergeladen und auf dem
-            eigenen Server ausgeliefert. Es findet keine Verbindung zu externen
-            Servern statt.
+            eigenen Server ausgeliefert. Für die Schriftarten findet keine
+            Verbindung zu externen Servern statt.
           </p>
         </section>
 

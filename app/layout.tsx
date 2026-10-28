@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
+
+const umamiUrl = process.env.NEXT_PUBLIC_UMAMI_URL;
+const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,6 +59,14 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        {umamiUrl && umamiWebsiteId && (
+          <Script
+            src={`${umamiUrl}/script.js`}
+            data-website-id={umamiWebsiteId}
+            data-domains="marcus-hartmann.net"
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );

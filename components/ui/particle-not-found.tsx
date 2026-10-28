@@ -7,6 +7,10 @@ import { useParticleText } from "@/components/ui/use-particle-text";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
+// Static CSS stand-in for the WebGL aurora
+const AURORA_FALLBACK =
+  "bg-[radial-gradient(ellipse_at_20%_30%,rgba(255,255,255,0.07),transparent_55%),radial-gradient(ellipse_at_80%_40%,rgba(255,255,255,0.05),transparent_55%)]";
+
 const subscribe = () => () => {};
 
 export function ParticleNotFound() {
@@ -22,13 +26,17 @@ export function ParticleNotFound() {
 
   const fallback = useParticleText(sectionRef, canvasRef, slotRef, {
     lines: ["404"],
+    aurora: true,
   });
 
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-svh w-full overflow-hidden bg-neutral-950
-                 flex flex-col items-center justify-center px-6 pt-24 pb-16"
+      data-nav-clear
+      className={`relative min-h-svh w-full overflow-hidden bg-neutral-950
+                 flex flex-col items-center justify-center px-6 pt-24 pb-16 ${
+                   fallback ? AURORA_FALLBACK : ""
+                 }`}
     >
       <canvas
         ref={canvasRef}
@@ -51,6 +59,7 @@ export function ParticleNotFound() {
         <div
           ref={slotRef}
           aria-hidden="true"
+          data-nav-tint
           className="w-full max-w-5xl h-[26svh] sm:h-[38svh] min-h-40"
         />
       )}

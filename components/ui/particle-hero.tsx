@@ -6,6 +6,10 @@ import { useParticleText } from "@/components/ui/use-particle-text";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
+// Static CSS stand-in for the WebGL aurora
+const AURORA_FALLBACK =
+  "bg-[radial-gradient(ellipse_at_20%_30%,rgba(255,255,255,0.07),transparent_55%),radial-gradient(ellipse_at_80%_40%,rgba(255,255,255,0.05),transparent_55%)]";
+
 export function ParticleHero({
   title = "Marcus Hartmann",
   shockwave = false,
@@ -27,14 +31,18 @@ export function ParticleHero({
     introRamp: 0.4,
     spawnRadius: 140,
     pointScale: 0.85,
+    aurora: true,
     shockwave,
   });
 
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-svh w-full overflow-hidden bg-neutral-950
-                 flex flex-col items-center justify-center px-6 pt-24 pb-16"
+      data-nav-clear
+      className={`relative min-h-svh w-full overflow-hidden bg-neutral-950
+                 flex flex-col items-center justify-center px-6 pt-24 pb-16 ${
+                   fallback ? AURORA_FALLBACK : ""
+                 }`}
     >
       <canvas
         ref={canvasRef}
@@ -57,6 +65,7 @@ export function ParticleHero({
         <div
           ref={slotRef}
           aria-hidden="true"
+          data-nav-tint
           className="w-[calc(100%+2rem)] -mx-4 sm:mx-0 sm:w-full max-w-[96rem] h-[30svh] sm:h-[22svh] min-h-32"
         />
       )}

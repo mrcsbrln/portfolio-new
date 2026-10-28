@@ -7,6 +7,7 @@ import {
   animate,
   AnimatePresence,
 } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const navItems = [
@@ -20,6 +21,13 @@ const navItems = [
 export function Navbar() {
   const visible = useMotionValue(1);
   const y = useTransform(visible, [0, 1], ["-100%", "0%"]);
+  // Glass backdrop is hidden while a dark [data-nav-clear] section sits behind
+  // the navbar; it only exists to keep the links readable over bright content,
+  // so it returns as soon as a [data-nav-tint] element (e.g. the hero name)
+  // reaches the navbar
+  const backdrop = useMotionValue(0);
+  const headerRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
   const lastScrollY = useRef(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -43,8 +51,41 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [visible]);
 
+  useEffect(() => {
+    let tinted: boolean | null = null;
+    const update = () => {
+      const navHeight = headerRef.current?.offsetHeight ?? 0;
+      const clear = Array.from(
+        document.querySelectorAll("[data-nav-clear]"),
+      ).some((el) => {
+        const rect = el.getBoundingClientRect();
+        return rect.top <= 0 && rect.bottom > navHeight;
+      });
+      const bright = Array.from(
+        document.querySelectorAll("[data-nav-tint]"),
+      ).some((el) => {
+        const rect = el.getBoundingClientRect();
+        return rect.top < navHeight && rect.bottom > 0;
+      });
+      const next = !clear || bright;
+      if (next === tinted) return;
+      // No fade on the first check so the page doesn't flash on load
+      if (tinted === null) backdrop.set(next ? 1 : 0);
+      else animate(backdrop, next ? 1 : 0, { duration: 0.3 });
+      tinted = next;
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [backdrop, pathname]);
+
   return (
     <motion.header
+      ref={headerRef}
       initial={{ y: -16, opacity: 0 }}
       animate={{ y: "0%", opacity: 1 }}
       style={{ y }}
@@ -52,7 +93,8 @@ export function Navbar() {
       className="fixed top-0 left-0 right-0 z-50"
     >
       {/* Glass backdrop */}
-      <div
+      <motion.div
+        style={{ opacity: menuOpen ? 1 : backdrop }}
         className="absolute inset-0 pointer-events-none backdrop-blur-md
                    bg-neutral-950/50
                    border-b border-neutral-950"

@@ -1,6 +1,6 @@
 "use client";
 
-import { Geometry, Mesh, Program, Renderer } from "ogl";
+import { Geometry, Mesh, Program, Renderer, Transform, Triangle } from "ogl";
 import { type RefObject, useEffect, useRef, useState } from "react";
 
 const vertex = /* glsl */ `
@@ -33,6 +33,59 @@ const fragment = /* glsl */ `
   }
 `;
 
+const auroraVertex = /* glsl */ `
+  attribute vec2 position;
+  attribute vec2 uv;
+  varying vec2 vUv;
+
+  void main() {
+    vUv = uv;
+    gl_Position = vec4(position, 0.0, 1.0);
+  }
+`;
+
+// Very dark, slowly drifting graphite glows on neutral-950 with film grain
+const auroraFragment = /* glsl */ `
+  precision highp float;
+  uniform float uTime;
+  uniform vec2 uResolution;
+  varying vec2 vUv;
+
+  float glow(vec2 p, vec2 center, float spread) {
+    vec2 d = p - center;
+    return exp(-dot(d, d) * spread);
+  }
+
+  float hash(vec2 p) {
+    return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+  }
+
+  void main() {
+    float aspect = uResolution.x / uResolution.y;
+    vec2 p = vec2(vUv.x * aspect, vUv.y);
+    float t = uTime;
+
+    vec2 c1 = vec2((0.25 + 0.12 * sin(t * 0.045)) * aspect, 0.72 + 0.10 * cos(t * 0.037));
+    vec2 c2 = vec2((0.75 + 0.10 * cos(t * 0.032)) * aspect, 0.60 + 0.12 * sin(t * 0.051));
+    vec2 c3 = vec2((0.50 + 0.18 * sin(t * 0.026 + 1.7)) * aspect, 0.88 + 0.06 * sin(t * 0.041));
+
+    // Neutral graphite tones only, no hue
+    vec3 color = vec3(10.0 / 255.0);
+    float light = glow(p, c1, 3.2) * 0.06
+                + glow(p, c2, 3.6) * 0.048
+                + glow(p, c3, 5.0) * 0.036;
+
+    // Fade out towards the bottom so the next section joins seamlessly
+    color += light * smoothstep(0.0, 0.35, vUv.y);
+
+    // Grain hides banding in the dark gradients
+    float grain = hash(gl_FragCoord.xy + fract(t * 7.0) * 100.0) - 0.5;
+    color += grain * (3.0 / 255.0);
+
+    gl_FragColor = vec4(color, 1.0);
+  }
+`;
+
 type Wave = { x: number; y: number; t0: number };
 
 export type ParticleTextOptions = {
@@ -49,6 +102,8 @@ export type ParticleTextOptions = {
   spawnRadius?: number;
   /** Point size multiplier */
   pointScale?: number;
+  /** Slowly drifting dark graphite glows behind the particles */
+  aurora?: boolean;
   /** Click/tap shockwave; read live, so it can be toggled without a rebuild */
   shockwave?: boolean;
 };
@@ -127,6 +182,7 @@ export function useParticleText(
     introRamp = 0.6,
     spawnRadius,
     pointScale = 1,
+    aurora = false,
     shockwave = true,
   }: ParticleTextOptions,
 ) {
@@ -196,6 +252,28 @@ export function useParticleText(
         });
         program.setBlendFunc(gl.SRC_ALPHA, gl.ONE);
 
+        // Background first, particles on top (render list keeps child order)
+        const scene = new Transform();
+        let auroraProgram: Program | null = null;
+        let auroraGeometry: Triangle | null = null;
+        if (aurora) {
+          auroraProgram = new Program(gl, {
+            vertex: auroraVertex,
+            fragment: auroraFragment,
+            uniforms: {
+              uTime: { value: reducedMotion ? 12 : 0 },
+              uResolution: { value: [1, 1] },
+            },
+            depthTest: false,
+            depthWrite: false,
+          });
+          auroraGeometry = new Triangle(gl);
+          new Mesh(gl, {
+            geometry: auroraGeometry,
+            program: auroraProgram,
+          }).setParent(scene);
+        }
+
         let count = 0;
         let pos = new Float32Array();
         let vel = new Float32Array();
@@ -217,6 +295,8 @@ export function useParticleText(
           height = rect.height;
           renderer.setSize(width, height);
           program.uniforms.uResolution.value = [width, height];
+          if (auroraProgram)
+            auroraProgram.uniforms.uResolution.value = [width, height];
 
           const mobile = width < 640;
           target = sampleTargets(
@@ -255,6 +335,7 @@ export function useParticleText(
           }
           count = next;
 
+          mesh?.setParent(null);
           geometry?.remove();
           geometry = new Geometry(gl, {
             position: { size: 2, data: pos },
@@ -262,10 +343,11 @@ export function useParticleText(
             speed: { size: 1, data: speed },
           });
           mesh = new Mesh(gl, { geometry, program, mode: gl.POINTS });
+          mesh.setParent(scene);
         };
 
         const render = () => {
-          if (mesh) renderer.render({ scene: mesh });
+          if (mesh) renderer.render({ scene, sort: false });
         };
 
         let raf = 0;
@@ -275,6 +357,7 @@ export function useParticleText(
           const dt = Math.min((now - last) / 16.667, 3);
           last = now;
           const t = (now - start) / 1000;
+          if (auroraProgram) auroraProgram.uniforms.uTime.value = t;
           const radius = width < 640 ? 70 : 120;
           const r2 = radius * radius;
           const damping = Math.pow(0.88, dt);
@@ -388,6 +471,8 @@ export function useParticleText(
           document.removeEventListener("visibilitychange", sync);
           geometry?.remove();
           program.remove();
+          auroraGeometry?.remove();
+          auroraProgram?.remove();
         };
       });
 
@@ -406,6 +491,7 @@ export function useParticleText(
     introRamp,
     spawnRadius,
     pointScale,
+    aurora,
   ]);
 
   return fallback;

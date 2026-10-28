@@ -79,7 +79,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="w-full bg-neutral-900 py-28 md:py-36">
+    <section id="contact" className="w-full bg-neutral-950 py-28 md:py-36">
       <div className="w-full max-w-360 mx-auto px-6">
         {/* Section label */}
         <motion.p
@@ -89,7 +89,7 @@ export function ContactSection() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="font-mono text-xs tracking-[0.2em] uppercase text-neutral-500 mb-10"
         >
-          04 / Contact
+          05 / Contact
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
